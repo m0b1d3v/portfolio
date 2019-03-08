@@ -1,0 +1,14 @@
+image: node:latest
+
+cache:
+  paths:
+    - node_modules/
+
+deploy:
+  only:
+    - master
+  stage: deploy
+  script:
+    - npm install
+    - npm run build
+    - node_modules/.bin/firebase deploy -m "Pipeline $CI_PIPELINE_ID" --non-interactive --token $FIREBASE_CI_TOKEN
