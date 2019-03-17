@@ -1,3 +1,3 @@
-# Personal site
+# Portfolio
 
 Project list and light resume
