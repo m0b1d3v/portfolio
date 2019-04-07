@@ -11,3 +11,13 @@
 
 // Content wrapper
 @import "wrapper";
+
+// All of our project buttons should take up a row's width
+.button {
+  width: 100%;
+}
+
+// Less content separation from project headers
+h4  {
+  margin-bottom: 10px;
+}
