@@ -1,3 +1,3 @@
 # Portfolio
 
-Project list and light resume
+Project list and light resume.
