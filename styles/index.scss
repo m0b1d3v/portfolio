@@ -23,10 +23,27 @@ $body-overflow-y: "auto";
 @import "../../../node_modules/bulma/sass/elements/container";
 @import "../../../node_modules/bulma/sass/components/level";
 
-// Project styles
+// Typography sizing
 
+h1 {
+	font-size: $size-1;
+}
+
+h2 {
+	font-size: $size-2;
+}
+
+p {
+	& a {
+		font-size: $size-4;
+	}
+	& span {
+		font-size: $size-5;
+	}
+}
+
+// Place a border (padded from any content) at the top and bottom of the darkened viewport
 body {
-	// Place a border (padded from any content) at the top and bottom of the darkened viewport
 	background-color: $black-ter;
 	border-color: $color-primary; // $black-bis;
 	border-style: solid;
@@ -34,14 +51,22 @@ body {
 	min-height: 100vh;
 }
 
-// Set our horizontal rules apart from the blackened background a bit
-hr {
-	background-color: lighten($black-ter, 5%);
+// Give content some breathing room (a little less for phones)
+.container {
+	padding: 1.5rem 3rem;
+	@media screen and (max-width: $tablet) {
+		padding: 1.5rem;
+	}
 }
 
 // Invert our black background color for readable text
-h1, h2, p {
+h1, span {
 	color: findColorInvert($black-bis);
+}
+
+// Set our horizontal rules apart from the blackened background a bit
+hr {
+	background-color: lighten($black-ter, 5%);
 }
 
 // Give text paragraphs breathing room
@@ -49,12 +74,7 @@ p {
 	margin-bottom: 1rem;
 }
 
-// Give content some breathing room
-.container {
-	padding: 1.5rem 3rem;
-}
-
-// Utility class for adding an indent to given element
-.indent {
-	margin-left: 1.5rem;
+// Indent project descriptions a tiny bit from their titles
+span {
+	margin: 0 .5rem;
 }

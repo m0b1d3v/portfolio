@@ -16,10 +16,10 @@ html(lang="en")
 	body
 		.container
 
-			h1.is-size-1 MobiusK
-			h2.is-size-2
+			h1 MobiusK
+			h2
 				a(href="mailto:mail@mobiusk.com") Email
-			h3.is-size-3
+				span &middot;
 				a(href="https://git.mobiusk.com") Code
 
 			hr
@@ -45,5 +45,6 @@ html(lang="en")
 				}
 
 			each project, title in projects
-				a.is-size-4(href=project.link) #{title}
-				p.is-size-5.indent !{project.text}
+				p
+					a(href=project.link) #{title}
+					span !{project.text}
