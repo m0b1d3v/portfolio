@@ -1,18 +1,60 @@
-@import "variables";
+// Lighten links just a bit from the primary color for dark background contrast
+// Primary green color supplied by Lish in profile picture art
+$color-primary: #538154;
+$link: lighten($color-primary, 15%);
+$link-hover: lighten($color-primary, 25%);
 
-// Browser reset
-@import "../../../node_modules/normalize.css/normalize";
+// Font selection
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+$family-sans-serif: "Roboto", sans-serif !default;
 
-// CSS framework (Milligram)
-@import "framework";
+// Framework displays scrollbar by default, so reset that
+$body-overflow-y: "auto";
 
-// Text overrides
-@import "typography";
+// CSS framework
+@import "../../../node_modules/bulma/sass/utilities/initial-variables";
+@import "../../../node_modules/bulma/sass/utilities/functions";
+@import "../../../node_modules/bulma/sass/utilities/derived-variables";
+@import "../../../node_modules/bulma/sass/utilities/mixins";
+@import "../../../node_modules/bulma/sass/utilities/controls";
+@import "../../../node_modules/bulma/sass/base/minireset";
+@import "../../../node_modules/bulma/sass/base/generic";
+@import "../../../node_modules/bulma/sass/base/helpers";
+@import "../../../node_modules/bulma/sass/elements/container";
+@import "../../../node_modules/bulma/sass/components/level";
 
-// Content wrapper
-@import "wrapper";
+// Project styles
 
-// All of our project buttons should take up a row's width
-.button {
-	width: 100%;
+body {
+	// Place a border (padded from any content) at the top and bottom of the darkened viewport
+	background-color: $black-ter;
+	border-color: $color-primary; // $black-bis;
+	border-style: solid;
+	border-width: 5px 0 4px;
+	min-height: 100vh;
+}
+
+// Set our horizontal rules apart from the blackened background a bit
+hr {
+	background-color: lighten($black-ter, 5%);
+}
+
+// Invert our black background color for readable text
+h1, h2, p {
+	color: findColorInvert($black-bis);
+}
+
+// Give text paragraphs breathing room
+p {
+	margin-bottom: 1rem;
+}
+
+// Give content some breathing room
+.container {
+	padding: 1.5rem 3rem;
+}
+
+// Utility class for adding an indent to given element
+.indent {
+	margin-left: 1.5rem;
 }

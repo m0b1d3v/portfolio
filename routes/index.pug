@@ -1,62 +1,49 @@
-extends ../templates/layout
+doctype html
 
-block content
+html(lang="en")
 
-	-
-		const projects = {
-			"BlueTooth class": {
-				description: `
-				Helps build class codes for the BlueTooth <a href="https://linux.die.net/man/1/hcitool">hcitool</a>.
-				Iterates on previous translation work with nested keys and separate translation files,
-				while refreshing on boolean algebra knowledge.
-				`,
-				links: {
-					Site: "https://bluetooth-class.mobiusk.com",
-					Source: "https://gitlab.com/mobius_k/bluetooth-class",
-					Development: "https://www.youtube.com/watch?v=2MfZpgUkpc0",
-				},
-			},
-			"Twitch Time-Lapse": {
-				description: `
-				Joins together previous live-streams into a recap video.
-				Command-line tool written in <a href="https://golang.org">Golang</a>
-				leveraging <a href="https://ytdl-org.github.io/youtube-dl">youtube-dl</a>
-				and <a href="https://www.ffmpeg.org">ffmpeg</a>.
-				`,
-				links: {
-					Source: "https://gitlab.com/mobius_k/twitch-time-lapse",
-					Development: "https://www.youtube.com/watch?v=gIZdjHlwOkA",
-				},
-			},
-			Portfolio: {
-				description: `
-				The website that you're reading right now!
-				Made with <a href="https://gulpjs.com/">Gulp</a>, <a href="https://milligram.io/">Milligram</a>,
-				and <a href="https://pugjs.org">Pug</a>.
-				`,
-				links: {
-					Source: "https://gitlab.com/mobius_k/portfolio",
-					Development: "https://www.youtube.com/watch?v=y5o8AvKySdE",
-				},
-			},
-			Pomodoro: {
-				description: `
-				Work interval manager utilizing timed periods of effort and rest.
-				Learning about <a href="https://materializecss.com">Materialize CSS</a>
-				and <a href="https://pugjs.org">Pug</a>. Implemented a custom translation system in vanilla JavaScript.
-				`,
-				links: {
-					Site: "https://pomodoro.mobiusk.com",
-					Development: "https://www.youtube.com/watch?v=tBavGJO-fto"
-				},
-			},
-		}
+	head
 
-	each project, title in projects
-		h4 #{title}
-		.indent
-			.row
-				each link, text in project.links
-					.column
-						a.button.button-outline(href=link) #{text}
-			p !{project.description}
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=1")
+		meta(name="description", content="Personal project list")
+
+		title MobiusK
+
+		link(rel="shortcut icon", href="favicon.ico")
+		link(rel="stylesheet", href="index.css")
+
+	body
+		.container
+
+			h1.is-size-1 MobiusK
+			h2.is-size-2
+				a(href="mailto:mail@mobiusk.com") Email
+			h3.is-size-3
+				a(href="https://git.mobiusk.com") Code
+
+			hr
+
+			-
+				const projects = {
+				"BlueTooth class": {
+					link: "https://bluetooth-class.mobiusk.com",
+					text: `Helps build class codes for hcitool`,
+				},
+				"Twitch Time-Lapse": {
+					link: "https://gitlab.com/mobius_k/twitch-time-lapse",
+					text: `Joins together previous Twitch live-streams into a recap video`,
+				},
+				"Portfolio": {
+					link: "https://mobiusk.com",
+					text: `The website that you're reading right now`,
+				},
+				"Pomodoro": {
+					link: "https://pomodoro.mobiusk.com",
+					text: `Work interval manager utilizing timed periods of effort and rest`,
+				},
+				}
+
+			each project, title in projects
+				a.is-size-4(href=project.link) #{title}
+				p.is-size-5.indent !{project.text}
