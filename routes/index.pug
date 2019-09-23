@@ -1,51 +1,28 @@
-doctype html
+extends ../templates/layout
 
-html(lang="en")
+block content
+	-
+		const projects = {
+		"BlueTooth class": {
+			link: "https://bluetooth-class.mobiusk.com",
+			text: `Helps build class codes for hcitool`,
+		},
+		"Twitch Time-Lapse": {
+			link: "https://gitlab.com/mobius_k/twitch-time-lapse",
+			text: `Joins together previous Twitch live-streams into a recap video`,
+		},
+		"Portfolio": {
+			link: "https://mobiusk.com",
+			text: `The website that you're reading right now`,
+		},
+		"Pomodoro": {
+			link: "https://pomodoro.mobiusk.com",
+			text: `Work interval manager utilizing timed periods of effort and rest`,
+		},
+		}
 
-	head
-
-		meta(charset="utf-8")
-		meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=1")
-		meta(name="description", content="Personal project list")
-
-		title MobiusK
-
-		link(rel="shortcut icon", href="favicon.ico")
-		link(rel="stylesheet", href="portfolio.css")
-
-	body
-		.container
-
-			h1 MobiusK
-			h2
-				a(href="mailto:mail@mobiusk.com") Email
-				span &middot;
-				a(href="https://git.mobiusk.com") Code
-
-			hr
-
-			-
-				const projects = {
-				"BlueTooth class": {
-					link: "https://bluetooth-class.mobiusk.com",
-					text: `Helps build class codes for hcitool`,
-				},
-				"Twitch Time-Lapse": {
-					link: "https://gitlab.com/mobius_k/twitch-time-lapse",
-					text: `Joins together previous Twitch live-streams into a recap video`,
-				},
-				"Portfolio": {
-					link: "https://mobiusk.com",
-					text: `The website that you're reading right now`,
-				},
-				"Pomodoro": {
-					link: "https://pomodoro.mobiusk.com",
-					text: `Work interval manager utilizing timed periods of effort and rest`,
-				},
-				}
-
-			each project, title in projects
-				p
-					a(href=project.link) #{title}
-					|
-					span !{project.text}
+	each project, title in projects
+		p
+			a(href=project.link) #{title}
+			|
+			span !{project.text}

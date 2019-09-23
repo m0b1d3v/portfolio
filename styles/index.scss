@@ -60,7 +60,7 @@ body {
 }
 
 // Invert our black background color for readable text
-h1, span {
+h1, p {
 	color: findColorInvert($black-bis);
 }
 
