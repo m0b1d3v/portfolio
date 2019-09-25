@@ -1,80 +1,121 @@
-// Lighten links just a bit from the primary color for dark background contrast
+// Important note: This stylesheet used to cobble together styles from the Bulma CSS framework
+// Great project, but overkill for what I needed/wanted in this extremely low-tech site
+// https://bulma.io/
+
+// Variables
 // Primary green color supplied by Lish in profile picture art
-$color-primary: #538154;
-$link: lighten($color-primary, 15%);
-$link-hover: lighten($color-primary, 25%);
 
-// Font selection
+$colorBackground: hsl(0, 0%, 14%);
+$colorPrimary: #538154;
+
+$widthTablet: 768px;
+$widthLaptop: 1024px;
+$widthDesktop: 1216px;
+$widthWidescreen: 1408px;
+
+// Font import
+
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-$family-sans-serif: "Roboto", sans-serif !default;
 
-// Framework displays scrollbar by default, so reset that
-$body-overflow-y: "auto";
+// Background container
 
-// CSS framework
-@import "../../../node_modules/bulma/sass/utilities/initial-variables";
-@import "../../../node_modules/bulma/sass/utilities/functions";
-@import "../../../node_modules/bulma/sass/utilities/derived-variables";
-@import "../../../node_modules/bulma/sass/utilities/mixins";
-@import "../../../node_modules/bulma/sass/utilities/controls";
-@import "../../../node_modules/bulma/sass/base/minireset";
-@import "../../../node_modules/bulma/sass/base/generic";
-@import "../../../node_modules/bulma/sass/base/helpers";
-@import "../../../node_modules/bulma/sass/elements/container";
-@import "../../../node_modules/bulma/sass/components/level";
-
-// Typography sizing
-
-h1 {
-	font-size: $size-1;
+body, html {
+	background-color: $colorBackground;
+	margin: 0;
+	padding: 0;
 }
 
-h2 {
-	font-size: $size-2;
+html {
+	box-sizing: border-box;
+	font-size: 16px;
+	min-width: 300px;
 }
 
-p {
-	& a {
-		font-size: $size-4;
-	}
-	& span {
-		font-size: $size-5;
-	}
-}
-
-// Place a border (padded from any content) at the top and bottom of the darkened viewport
 body {
-	background-color: $black-ter;
-	border-color: $color-primary; // $black-bis;
+	border-color: $colorPrimary;
 	border-style: solid;
 	border-width: 5px 0 4px;
+	color: #dddddd;
+	font-family: Roboto, sans-serif;
+	font-weight: 400;
+	line-height: 1.5;
 	min-height: 100vh;
 }
 
-// Give content some breathing room (a little less for phones)
+*, ::after, ::before {
+	box-sizing: inherit;
+}
+
+// Typography sizes
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 400;
+	margin: 0;
+}
+
+h1 {
+	font-size: 3rem;
+}
+
+h2 {
+	font-size: 2.5rem;
+}
+
+p a {
+	font-size: 1.5rem;
+}
+
+p span {
+	font-size: 1.25rem;
+}
+
+// Content container
+
 .container {
+
+	flex-grow: 1;
+	margin: 0 auto;
 	padding: 1.5rem 3rem;
-	@media screen and (max-width: $tablet) {
+	width: auto;
+
+	@media screen and (max-width: $widthTablet) {
 		padding: 1.5rem;
+	}
+
+	@media screen and (min-width: $widthLaptop) {
+		max-width: 960px;
+	}
+
+	@media screen and (min-width: $widthDesktop) {
+		max-width: 1152px;
+	}
+
+	@media screen and (min-width: $widthWidescreen) {
+		max-width: 1344px;
 	}
 }
 
-// Invert our black background color for readable text
-h1, p {
-	color: findColorInvert($black-bis);
-}
+// Header from content separation
 
-// Set our horizontal rules apart from the blackened background a bit
 hr {
-	background-color: lighten($black-ter, 5%);
+	background-color: lighten($colorBackground, 5%);
+	border: none;
+	height: 2px;
+	margin: 1.5rem 0;
 }
 
-// Give text paragraphs breathing room
-p {
-	margin-bottom: 1rem;
+// Coloring links while removing underlines
+
+a {
+	color: lighten($colorPrimary, 15%);
+	text-decoration: none;
+	&:hover {
+		color: lighten($colorPrimary, 25%);
+	}
 }
 
 // Indent project descriptions a tiny bit from their titles
+
 span {
 	margin: 0 .5rem;
 }
