@@ -4,8 +4,9 @@
 
 // Variables
 // Primary green color supplied by Lish in profile picture art
+// Ensure that changes in color get propagated to manifest.json options and layout.pug meta attributes
 
-$colorBackground: hsl(0, 0%, 14%);
+$colorBackground: #242424;
 $colorPrimary: #538154;
 
 $widthTablet: 768px;
