@@ -8,7 +8,7 @@
 
 $colorBackground: #242424;
 $colorPrimary: #538154;
-$widthWidescreen: 1408px;
+$maxContentWidth: 900px;
 
 // Font import
 
@@ -72,8 +72,8 @@ p {
 	flex-grow: 1;
 	margin: 0 auto;
 	padding: 1.5rem;
-	@media screen and (min-width: $widthWidescreen) {
-		max-width: 1344px;
+	@media screen and (min-width: $maxContentWidth) {
+		max-width: $maxContentWidth - 64px;
 	}
 }
 
