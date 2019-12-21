@@ -60,9 +60,9 @@ h3 {
 }
 
 p {
-	font-size: 1.5rem;
-	& span {
-		font-size: 1.25rem;
+	font-size: 1.25rem;
+	& a {
+		font-size: 1.5rem;
 	}
 }
 
@@ -96,8 +96,8 @@ a {
 	}
 }
 
-// Indent project descriptions a tiny bit from their titles
+// Indent link descriptions a tiny bit
 
-span {
-	margin: 0 .5rem;
+p a {
+	margin-right: 0.5rem;
 }
