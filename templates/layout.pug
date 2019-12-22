@@ -1,0 +1,39 @@
+html(lang="en")
+
+	head
+
+		meta(charset="utf-8")
+		meta(name="description" content="Personal project list")
+		meta(name="theme-color" content="#242424")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+
+		title Mobius K
+
+		link(rel="icon shortcut" href="icon.png")
+		link(rel="stylesheet" href="portfolio.css")
+		link(rel="manifest" href="manifest.json")
+
+	body
+		.container
+
+			h1
+				| MobiusK
+				br
+				| Web Developer
+
+			h2
+				a(href="mailto:mail@mobiusk.com") mail@mobiusk.com
+
+			h3
+				a(href="https://git.mobiusk.com") git.mobiusk.com
+
+			hr
+
+			block content
+
+		script.
+			if ("serviceWorker" in navigator) {
+				window.addEventListener("load", function () {
+					navigator.serviceWorker.register("service-worker.js").then();
+				});
+			}
