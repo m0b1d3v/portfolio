@@ -10,10 +10,6 @@ $colorBackground: #242424;
 $colorPrimary: #538154;
 $maxContentWidth: 900px;
 
-// Font import
-
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
 // Background container
 
 body, html {
@@ -33,7 +29,7 @@ body {
 	border-style: solid;
 	border-width: 5px 0 4px;
 	color: #dddddd;
-	font-family: Roboto, sans-serif;
+	font-family: sans-serif;
 	font-weight: 400;
 	line-height: 1.5;
 	min-height: 100vh;
