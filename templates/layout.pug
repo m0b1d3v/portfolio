@@ -33,9 +33,4 @@ html(lang="en")
 
 			block content
 
-		script.
-			if ("serviceWorker" in navigator) {
-				window.addEventListener("load", function () {
-					navigator.serviceWorker.register("service-worker.js").then();
-				});
-			}
+		script(src="portfolio.js")
