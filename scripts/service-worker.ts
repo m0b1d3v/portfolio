@@ -1,7 +1,7 @@
 import { ServiceWorkerCache } from "shared/scripts/service-worker-cache";
 
 // Identifier used to ensure browsers are caching the right version of assets
-const cacheId = "2";
+const cacheId = "3";
 
 // Cache manipulator
 const cache: ServiceWorkerCache = new ServiceWorkerCache();
