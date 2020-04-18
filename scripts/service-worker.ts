@@ -1,15 +1,15 @@
 import { ServiceWorkerCache } from "shared/scripts/service-worker-cache";
 
 // Identifier used to ensure browsers are caching the right version of assets
-const cacheId = "3";
+const cacheId = "4";
 
 // Cache manipulator
-const cache: ServiceWorkerCache = new ServiceWorkerCache();
+const cache: ServiceWorkerCache = new ServiceWorkerCache(cacheId);
 
 // @ts-ignore Install the service worker and cache any files for offline use
 self.addEventListener("install", (event: InstallEvent) => {
 
-	event.waitUntil(cache.add(cacheId, [
+	event.waitUntil(cache.add([
 		"/404.html",
 		"/favicon.ico",
 		"/icon.png",
@@ -26,11 +26,15 @@ self.addEventListener("install", (event: InstallEvent) => {
 });
 
 // @ts-ignore Activate the service worker and remove previous caches
-self.addEventListener("activate", (event: ExtendableEvent) =>
-	event.waitUntil(cache.deleteCaches((id: string) => id != cacheId))
-);
+self.addEventListener("activate", (event: ExtendableEvent) => event.waitUntil(
+	cache.delete((id: string) => id != cacheId)
+));
 
-// @ts-ignore Get requests from cache, network, or a fallback
-self.addEventListener("fetch", (event: FetchEvent) =>
-	event.respondWith(cache.fetchWithCacheOnNetwork(cacheId, event.request, "/offline.html"))
-);
+// @ts-ignore Response priority: Cache > Network (cache after) > Offline message
+self.addEventListener("fetch", (event: FetchEvent) => event.respondWith(
+	cache.fetchOrFallback(
+		event.request,
+		async (request: Request) => cache.put(request, await fetch(request)),
+		() => cache.match("/offline.html")
+	)
+));
