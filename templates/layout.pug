@@ -16,6 +16,9 @@ html(lang="en")
 		link(rel="stylesheet" href="portfolio.css")
 		link(rel="manifest" href="manifest.json" crossorigin="use-credentials")
 
+		block scripts
+			script(src="portfolio.js" defer)
+
 	body
 		.container
 
@@ -31,5 +34,3 @@ html(lang="en")
 			hr
 
 			block content
-
-		script(src="portfolio.js")
