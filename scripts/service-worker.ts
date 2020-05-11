@@ -1,10 +1,7 @@
 import { ServiceWorkerCache } from "shared/scripts/service-worker-cache";
 
-// Identifier used to ensure browsers are caching the right version of assets
-const cacheId = "5";
-
 // Cache manipulator
-const cache: ServiceWorkerCache = new ServiceWorkerCache(cacheId);
+const cache: ServiceWorkerCache = new ServiceWorkerCache();
 
 // @ts-ignore Install the service worker and cache any files for offline use
 self.addEventListener("install", (event: InstallEvent) => {
@@ -27,7 +24,7 @@ self.addEventListener("install", (event: InstallEvent) => {
 
 // @ts-ignore Activate the service worker and remove previous caches
 self.addEventListener("activate", (event: ExtendableEvent) => event.waitUntil(
-	cache.delete((id: string) => id != cacheId)
+	cache.deletePreviousCaching()
 ));
 
 // @ts-ignore Response priority: Cache > Network (cache after) > Offline message
