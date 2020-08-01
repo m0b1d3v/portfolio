@@ -1,6 +1,6 @@
 # Portfolio
 
-Project list and light resume.
+Personal projects and interests.
 
 ## Sub-module layout
 
