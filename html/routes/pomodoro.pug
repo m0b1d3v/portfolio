@@ -1,0 +1,58 @@
+extends /portfolio/html/templates/layout
+
+block content
+
+	article
+
+		a(href="https://pomodoro.mobiusk.com")
+			h4 Pomodoro
+
+		.center
+			a(href="/") &lArr; Return to home page
+
+		p.center
+			time(datetime="2019-03-06") Created March 2019
+
+		p
+			| #[a(href="https://en.wikipedia.org/wiki/Pomodoro_Technique") The Pomodoro Technique] is a method used to manage work and rest into small intervals.
+			| This was my first side-project after finishing a job using the same technology everyday and I desired a simple site to try new things.
+			| I decided to create my own timer to fulfill three main purposes:
+			ol
+				li Implement a dynamic system with timings and events
+				li Build a translation system for text
+				li Learn about browser notification possibilities
+		p
+			| The timings script is admittedly the sloppiest part of this project, but it works!
+			| And at the end of the day, something working sloppily is better than something clean not working.
+			| The user inputs for the work and rest intervals drive a simple
+			| #[a(href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval") setInterval]
+			| that loops until stopped.
+			| While looping it will change some label text and progress bar direction as needed.
+			| The interval interactions are #[a(href="https://gitlab.com/mobius_k/pomodoro/-/blob/master/scripts/intervals.ts") here].
+
+		p
+			| Making content available in multiple languages is a fun problem.
+			| Doing research on existing solutions seemed a little overblown for my needs.
+			| Instead I decided to build my own to get an idea of what goes into it.
+			| Translations are keys and values in JSON files that are loaded into memory.
+			| These keys are linked to elements with an "i18n" attribute which is a short-form of internationalization.
+			| #[a(href="https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver") Mutation observers]
+			| then watch for page changes to keep text translations up-to-date.
+			| That script can be found #[a(href="https://gitlab.com/mobius_k/mobius_k/-/blob/master/shared/scripts/i18n.ts") here].
+
+		p
+			| Browser notification possibilities offer a nice improvement to a computer-based work interval.
+			| Having a notification pop-up instead of requiring constant attention to the timer is helpful.
+			| Permission prompts for browser capabilities only show up when a work interval actually starts to avoid annoying pop-up on page load.
+			| My notifications script can be found #[a(href="https://gitlab.com/mobius_k/mobius_k/-/blob/master/shared/scripts/notifications.ts") here].
+			| Notifications are easily abused so hopefully users of the site are OK with this.
+			| I am excited to work with other browser capabilities in the future, particularly #[a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API") Bluetooth].
+
+		figure.center
+			figcaption Screenshot of the final product
+			img(
+				src="/screenshots/pomodoro.png"
+				alt="Screenshot of Pomodoro"
+				width="958px"
+				height="600px"
+			)
