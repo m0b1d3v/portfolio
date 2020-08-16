@@ -5,7 +5,8 @@
 		{
 			"sizes": "512x512",
 			"src": "icon.png",
-			"type": "image/png"
+			"type": "image/png",
+			"purpose": "any maskable"
 		}
 	],
 	"name": "MobiusK Portfolio",
