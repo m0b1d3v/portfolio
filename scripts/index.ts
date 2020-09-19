@@ -1,7 +1,7 @@
-import { environment } from "portfolio/scripts/environment";
+import { release } from "shared/config/build";
 // import { ErrorMonitor } from "shared/scripts/error-monitor";
 
-if (environment.production) {
+if (release) {
 
 	// Start the error watcher
 	// This only needs to be enabled when significant scripting is added (don't forget to include the CDN script tag)
