@@ -1,4 +1,4 @@
-import { release } from "shared/config/build";
+import { release } from "shared/config/build.dev";
 // import { ErrorMonitor } from "shared/scripts/error-monitor";
 
 if (release) {
