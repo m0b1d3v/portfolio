@@ -1,0 +1,21 @@
+list:
+
+    - name: Pixelle
+      url: https://pixelle.cc
+      description: Illustration, concept art, and emote gallery
+
+    # - name: MobiCraft
+    #   url: https://minecraft.mobiusk.com
+    #   description: Community MineCraft server
+
+    - name: MsCloud Art
+      url: https://mscloud.art
+      description: Commission platform for artist
+
+    - name: BlueTooth Class
+      url: https://bluetooth-class.mobiusk.com
+      description: Helps build class codes for hcitool
+
+    - name: Pomodoro
+      url: https://pomodoro.mobiusk.com
+      description: Work interval manager utilizing timed periods of effort and rest
