@@ -1,0 +1,29 @@
+# Write hugo_stats.json to use for CSS post-processing
+build:
+    writeStats: true
+
+# We don't want/need these content types
+disableKinds:
+    - RSS
+    - sitemap
+    - taxonomy
+    - term
+
+# We explicitly don't want taxonomies (https://gohugo.io/content-management/taxonomies/)
+ignoreErrors:
+    - error-disable-taxonomy
+
+# Minimize HTML
+minify:
+    minifyOutput: true
+
+# Available at $.Site.Params.<key> in templates
+params:
+    scss:
+        outputStyle: compressed # expanded (largest), nested (default), compact, or compressed (smallest)
+        targetPath: portfolio.css
+
+# Where to read static files from
+staticDir:
+    - ../shared/assets/
+    - static

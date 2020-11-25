@@ -1,0 +1,12 @@
+# Write hugo_stats.json to use for CSS post-processing
+build:
+    writeStats: false
+
+# Minimize HTML
+minify:
+    minifyOutput: false
+
+# Available at $.Site.Params.<key> in templates
+params:
+    scss:
+        outputStyle: expanded # expanded (largest), nested (default), compact, or compressed (smallest)

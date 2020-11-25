@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="description" content="Personal projects and interests">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>
+		MobiusK
+		{{ with .Params.Title }} - {{ . }} {{ end }}
+	</title>
+
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	{{ $scss := resources.Get "index.scss" }}
+	{{ $style := $scss | toCSS $.Site.Params.scss }}
+
+	{{ with $style }}
+	<style>
+		{{ .Content | safeCSS }}
+	</style>
+	{{ end }}
+
+</head>
+
+<body>
+<div class="container">
+
+	<h1>
+		MobiusK
+	</h1>
+
+	<h2>
+		<a href="mailto:mail@mobiusk.com">
+			mail@mobiusk.com
+		</a>
+	</h2>
+
+	<h3>
+		<a href="https://git.mobiusk.com">
+			git.mobiusk.com
+		</a>
+	</h3>
+
+	<hr>
+
+	{{ block "main" . }}{{ end }}
+
+</div>
+
+<script>
+	if ("serviceWorker" in navigator) {
+		navigator.serviceWorker.getRegistrations().then(function (registrations) {
+			for (const registration of registrations) {
+				registration.unregister();
+			}
+		}).catch(function (e) {
+			// Do nothing
+		});
+	}
+</script>
+
+</body>
+
+</html>
