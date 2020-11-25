@@ -2,6 +2,9 @@
 build:
     writeStats: false
 
+# Auto-generate permission for robots to crawl anything
+enableRobotsTXT: false
+
 # Minimize HTML
 minify:
     minifyOutput: false

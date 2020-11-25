@@ -9,6 +9,9 @@ disableKinds:
     - taxonomy
     - term
 
+# Auto-generate permission for robots to crawl anything
+enableRobotsTXT: true
+
 # We explicitly don't want taxonomies (https://gohugo.io/content-management/taxonomies/)
 ignoreErrors:
     - error-disable-taxonomy
