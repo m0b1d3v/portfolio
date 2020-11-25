@@ -22,11 +22,6 @@
 
 	<link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
-	{{ $ts := resources.Get "service-worker.ts" }}
-	{{ $transpiled := $ts | babel }}
-	{{ $script := $transpiled | js.Build $.Site.Params.ts }}
-	<!-- Service worker cleanup: {{ $script.RelPermalink}} -->
-
 </head>
 
 <body>
