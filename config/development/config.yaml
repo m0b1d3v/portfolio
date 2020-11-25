@@ -1,17 +1,16 @@
 # Write hugo_stats.json to use for CSS post-processing
 build:
-    writeStats: false
-
 # Auto-generate permission for robots to crawl anything
 enableRobotsTXT: false
+  writeStats: false
 
 # Minimize HTML
 minify:
-    minifyOutput: false
+  minifyOutput: false
 
 # Available at $.Site.Params.<key> in templates
 params:
-    fingerprint:
-        enabled: false
-    scss:
-        outputStyle: expanded # expanded (largest), nested (default), compact, or compressed (smallest)
+  fingerprint:
+    enabled: false
+  scss:
+    outputStyle: expanded # expanded (largest), nested (default), compact, or compressed (smallest)

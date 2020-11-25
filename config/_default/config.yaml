@@ -1,35 +1,32 @@
 # Write hugo_stats.json to use for CSS post-processing
 build:
-    writeStats: true
+  writeStats: true
 
 # We don't want/need these content types
 disableKinds:
-    - RSS
-    - sitemap
-    - taxonomy
-    - term
-
 # Auto-generate permission for robots to crawl anything
 enableRobotsTXT: true
+  - RSS
+  - sitemap
+  - taxonomy
+  - term
 
 # We explicitly don't want taxonomies (https://gohugo.io/content-management/taxonomies/)
 ignoreErrors:
-    - error-disable-taxonomy
+  - error-disable-taxonomy
 
 # Minimize HTML
 minify:
-    minifyOutput: true
+  minifyOutput: true
 
 # Available at $.Site.Params.<key> in templates
 params:
-    fingerprint:
-        enabled: true
-        algorithm: md5 # sha512 (largest), sha384, sha256 (default), or md5 (smallest)
-    scss:
-        outputStyle: compressed # expanded (largest), nested (default), compact, or compressed (smallest)
-        targetPath: portfolio.css
-
 # Where to read static files from
 staticDir:
     - ../shared/assets/
     - static
+  fingerprint:
+    enabled: true
+    algorithm: md5 # sha512 (largest), sha384, sha256 (default), or md5 (smallest)
+  scss:
+    outputStyle: compressed # expanded (largest), nested (default), compact, or compressed (smallest)
