@@ -1,5 +1,9 @@
 list:
 
+    - name: Tabletop
+      url: https://tabletop.mobiusk.com
+      description: Virtual tabletop instance for Dungeons and Dragons
+
     - name: Pixelle
       url: https://pixelle.cc
       description: Illustration, concept art, and emote gallery
