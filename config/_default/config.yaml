@@ -33,3 +33,6 @@ params:
     algorithm: md5 # sha512 (largest), sha384, sha256 (default), or md5 (smallest)
   scss:
     outputStyle: compressed # expanded (largest), nested (default), compact, or compressed (smallest)
+  ts:
+    minify: true
+    target: es5 # esnext (default, latest), es2020, es2019, ..., es2015 (aka es6), es5 (earliest)

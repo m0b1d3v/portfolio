@@ -12,3 +12,6 @@ params:
     enabled: false
   scss:
     outputStyle: expanded # expanded (largest), nested (default), compact, or compressed (smallest)
+  ts:
+    minify: false
+    target: esnext # esnext (default, latest), es2020, es2019, ..., es2015 (aka es6), es5 (earliest)
