@@ -19,6 +19,9 @@ minify:
 
 # Available at $.Site.Params.<key> in templates
 params:
+    fingerprint:
+        enabled: true
+        algorithm: md5 # sha512 (largest), sha384, sha256 (default), or md5 (smallest)
     scss:
         outputStyle: compressed # expanded (largest), nested (default), compact, or compressed (smallest)
         targetPath: portfolio.css

@@ -16,12 +16,11 @@
 
 	{{ $scss := resources.Get "index.scss" }}
 	{{ $style := $scss | toCSS $.Site.Params.scss }}
-
-	{{ with $style }}
-	<style>
-		{{ .Content | safeCSS }}
-	</style>
+	{{ if $.Site.Params.fingerprint.enabled }}
+		{{ $style = $style | fingerprint $.Site.Params.fingerprint.algorithm }}
 	{{ end }}
+
+	<link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
 </head>
 
