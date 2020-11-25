@@ -1,7 +1,5 @@
 # Write hugo_stats.json to use for CSS post-processing
 build:
-# Auto-generate permission for robots to crawl anything
-enableRobotsTXT: false
   writeStats: false
 
 # Minimize HTML

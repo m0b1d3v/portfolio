@@ -1,11 +1,18 @@
+# Where to read files from (relative to parent mono-repo)
+assetDir: portfolio/assets
+contentDir: portfolio/content
+dataDir: portfolio/data
+layoutDir: portfolio/layouts
+staticDir:
+  - shared/assets
+  - portfolio/static
+
 # Write hugo_stats.json to use for CSS post-processing
 build:
   writeStats: true
 
 # We don't want/need these content types
 disableKinds:
-# Auto-generate permission for robots to crawl anything
-enableRobotsTXT: true
   - RSS
   - sitemap
   - taxonomy
@@ -21,10 +28,6 @@ minify:
 
 # Available at $.Site.Params.<key> in templates
 params:
-# Where to read static files from
-staticDir:
-    - ../shared/assets/
-    - static
   fingerprint:
     enabled: true
     algorithm: md5 # sha512 (largest), sha384, sha256 (default), or md5 (smallest)
