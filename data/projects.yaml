@@ -8,9 +8,9 @@ list:
     url: https://pixelle.cc
     description: Illustration, concept art, and emote gallery
 
-  # - name: MobiCraft
-  #   url: https://minecraft.mobiusk.com
-  #   description: Community MineCraft server
+  - name: MobiCraft
+    url: https://minecraft.mobiusk.com
+    description: Community MineCraft server
 
   - name: MsCloud Art
     url: https://mscloud.art
