@@ -14,11 +14,18 @@
 
 	<link rel="shortcut icon" href="/favicon.ico">
 
+	<!-- Parse styles -->
+
 	{{ $scss := resources.Get "index.scss" }}
 	{{ $style := $scss | toCSS $.Site.Params.scss }}
+
+	<!-- Fingerprint assets -->
+
 	{{ if $.Site.Params.fingerprint.enabled }}
 		{{ $style = $style | fingerprint $.Site.Params.fingerprint.algorithm }}
 	{{ end }}
+
+	<!-- Link assets -->
 
 	<link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
