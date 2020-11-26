@@ -58,7 +58,7 @@ h4 {
 	font-size: 2rem;
 }
 
-p, ol {
+p {
 	font-size: 1.25rem;
 }
 
@@ -75,7 +75,7 @@ p, ol {
 
 // Text alignment
 
-h1, h2, h3, h4, h5, h6, .center {
+h1, h2, h3, h4, h5, h6 {
 	text-align: center;
 }
 
@@ -86,17 +86,6 @@ hr {
 	border: none;
 	height: 2px;
 	margin: 1.5rem 0;
-}
-
-// Images should not expand beyond their containers
-
-figure {
-	margin: 0;
-}
-
-img {
-	box-shadow: 0 7px 28px 10px rgba(200, 200, 200, 0.05);
-	max-width: 100%;
 }
 
 // Coloring links while removing underlines
