@@ -4,5 +4,5 @@ contentDir: portfolio/content
 dataDir: portfolio/data
 layoutDir: portfolio/layouts
 staticDir:
-  - shared/assets
+  - shared/static
   - portfolio/static
