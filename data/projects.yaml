@@ -4,9 +4,9 @@ list:
     url: https://arcadevrc.com
     description: Virtual reality social club
 
-  - name: Tabletop
-    url: https://tabletop.mobiusk.com
-    description: Virtual tabletop instance for Dungeons and Dragons
+  # - name: Tabletop
+  #   url: https://tabletop.mobiusk.com
+  #   description: Virtual tabletop instance for Dungeons and Dragons
 
   - name: MobiCraft
     url: https://minecraft.mobiusk.com
