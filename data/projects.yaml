@@ -8,9 +8,9 @@ list:
   #   url: https://tabletop.mobiusk.com
   #   description: Virtual tabletop instance for Dungeons and Dragons
 
-  - name: MobiCraft
-    url: https://minecraft.mobiusk.com
-    description: Community MineCraft server
+  # - name: MobiCraft
+  #   url: https://minecraft.mobiusk.com
+  #   description: Community MineCraft server
 
   - name: MsCloud Art
     url: https://mscloud.art
