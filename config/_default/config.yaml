@@ -3,6 +3,7 @@ assetDir: portfolio/assets
 contentDir: portfolio/content
 dataDir: portfolio/data
 layoutDir: portfolio/layouts
+resourceDir: portfolio
 staticDir:
   - shared/static
   - portfolio/static
