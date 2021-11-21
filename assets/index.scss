@@ -74,7 +74,7 @@ p {
 
 // Text alignment
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
 	text-align: center;
 }
 
@@ -95,4 +95,10 @@ a {
 	&:hover {
 		color: lighten($colorPrimary, 25%);
 	}
+}
+
+// De-emphasizing content
+
+small {
+	color: #aaaaaa;
 }

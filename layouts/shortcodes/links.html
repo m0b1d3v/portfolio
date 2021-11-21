@@ -1,0 +1,13 @@
+{{ $links := index .Site.Data.links (.Get "list") }}
+
+{{ range $links }}
+
+	<p>
+		<a href="{{ .url }}">{{ .name }}</a>
+		<span>{{ .description }}</span>
+		{{ if isset . "subtext" }}
+		<small>{{ .subtext }}</small>
+		{{ end }}
+	</p>
+
+{{ end }}
