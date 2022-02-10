@@ -22,6 +22,10 @@ work:
 
 projects:
 
+  - name: Calibrate
+    url: https://calibrate.live
+    description: Virtual reality dance troupe
+
   - name: Arcade VRC
     url: https://arcadevrc.com
     description: Virtual reality gathering place
