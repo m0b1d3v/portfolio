@@ -38,9 +38,9 @@ projects:
   #   url: https://minecraft.mobiusk.com
   #   description: Community MineCraft server
 
-  - name: MsCloud Art
-    url: https://mscloud.art
-    description: Commission platform for artist
+  # - name: MsCloud Art
+  #   url: https://mscloud.art
+  #   description: Commission platform for artist
 
   - name: BlueTooth Class
     url: https://bluetooth-class.mobiusk.com
