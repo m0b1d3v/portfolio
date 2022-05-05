@@ -1,9 +1,18 @@
-# Where to read files from (relative to parent mono-repo)
-assetDir: portfolio/assets
-contentDir: portfolio/content
-dataDir: portfolio/data
-layoutDir: portfolio/layouts
-resourceDir: portfolio
-staticDir:
-  - shared/static
-  - portfolio/static
+# We don't want/need these content types
+disableKinds:
+  - RSS
+  - sitemap
+  - taxonomy
+  - term
+
+# We explicitly don't want taxonomies (https://gohugo.io/content-management/taxonomies/)
+ignoreErrors:
+  - error-disable-taxonomy
+
+# Available at $.Site.Params.<key> in templates
+params:
+  css:
+    outputStyle: expanded # expanded (largest), nested (default), compact, or compressed (smallest)
+  fingerprint:
+    algorithm: md5 # sha512 (largest), sha384, sha256 (default), or md5 (smallest)
+    enabled: false

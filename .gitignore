@@ -1,2 +1,18 @@
-# Processed assets
-_gen
+# IDEs and editors
+.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+__debug_bin
+.vscode
+.history
+
+# Dependencies
+node_modules
+
+# Build system
+.hugo_build.lock
+resources

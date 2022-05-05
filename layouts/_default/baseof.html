@@ -17,7 +17,7 @@
 	<!-- Parse styles -->
 
 	{{ $scss := resources.Get "index.scss" }}
-	{{ $style := $scss | toCSS $.Site.Params.scss }}
+	{{ $style := $scss | toCSS $.Site.Params.css }}
 
 	<!-- Fingerprint assets -->
 
