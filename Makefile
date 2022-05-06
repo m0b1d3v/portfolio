@@ -4,9 +4,6 @@ project = portfolio
 # Command line variable building with check for a project flag specified
 build = /srv/$(project)
 
-# When this Makefile run was called
-date = $(shell date +%s)
-
 # Directory for public assets to be placed in for a given build
 public = $(build)/public
 
