@@ -62,7 +62,7 @@ h4 {
 }
 
 p, li {
-	font-size: 1.25rem;
+	font-size: 1.5rem;
 }
 
 /*
@@ -107,6 +107,11 @@ Lists
 
 ul li {
 	list-style-type: circle;
+}
+
+li a {
+	display: inline-block;
+	min-width: 45px; /* Ensure that click bounds are large enough for short links like "Git" */
 }
 
 /*
