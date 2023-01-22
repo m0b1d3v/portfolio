@@ -14,5 +14,6 @@ __debug_bin
 node_modules
 
 # Build system
+firebase-debug.log
 .firebase
 .firebaserc
