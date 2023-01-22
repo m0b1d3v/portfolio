@@ -30,7 +30,7 @@ body {
 	border-color: var(--color-primary);
 	border-style: solid;
 	border-width: 5px 0 4px;
-	font-family: sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
 	line-height: 1.5;
 	min-height: 100vh;
