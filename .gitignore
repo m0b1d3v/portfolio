@@ -14,5 +14,5 @@ __debug_bin
 node_modules
 
 # Build system
-.hugo_build.lock
-resources
+.firebase
+.firebaserc
