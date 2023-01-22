@@ -1,0 +1,123 @@
+/*
+Important note: This stylesheet used to cobble together styles from the Bulma CSS framework
+Great project, but overkill for what I needed/wanted in this extremely low-tech site
+https://bulma.io/
+*/
+
+:root {
+	--color-background: #242424;
+	--color-primary: #634677;
+	--max-content-width: 900px;
+}
+
+/*
+Background container
+*/
+
+body, html {
+	background-color: var(--color-background);
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 16px;
+	min-width: 300px;
+}
+
+body {
+	border-color: var(--color-primary);
+	border-style: solid;
+	border-width: 5px 0 4px;
+	font-family: sans-serif;
+	font-weight: 400;
+	line-height: 1.5;
+	min-height: 100vh;
+}
+
+/*
+Typography sizes
+*/
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 400;
+	margin: 0;
+}
+
+h1 {
+	font-size: 3rem;
+}
+
+h2 {
+	font-size: 2.3rem;
+}
+
+h3 {
+	font-size: 2.3rem;
+}
+
+h4 {
+	font-size: 2rem;
+}
+
+p {
+	font-size: 1.25rem;
+}
+
+/*
+Content container
+*/
+
+.container {
+	flex-grow: 1;
+	margin: 0 auto;
+	max-width: calc(var(--max-content-width) - 64px);
+	padding: 1.5rem;
+}
+
+/*
+Text alignment
+*/
+
+h1, h2, h3 {
+	text-align: center;
+}
+
+/*
+Header from content separation
+*/
+
+hr {
+	background-color: var(--color-background);
+	border: none;
+	filter: brightness(1.05);
+	height: 2px;
+	margin: 1.5rem 0;
+}
+
+/*
+ Coloring links while removing underlines
+*/
+
+a {
+	text-decoration: underline;
+	text-decoration-color: var(--color-primary);
+	text-decoration-thickness: 3px;
+}
+
+a:hover {
+	filter: brightness(1.25);
+}
+
+/*
+ De-emphasizing content
+*/
+
+a, body {
+	color: #dddddd;
+}
+
+small {
+	color: #aaaaaa;
+}
