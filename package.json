@@ -1,5 +1,9 @@
 {
-  "devDependencies": {
-    "firebase-tools": "^11.21.0"
-  }
+	"scripts": {
+		"emulate": "firebase emulators:start",
+		"deploy": "firebase deploy"
+	},
+	"devDependencies": {
+		"firebase-tools": "^11.21.0"
+	}
 }
