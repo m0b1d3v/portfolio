@@ -5,6 +5,13 @@
 			"firebase.json",
 			"**/.*",
 			"**/node_modules/**"
+		],
+		"redirects": [
+			{
+				"source": "/vrchat",
+				"destination" : "https://vrchat.com/home/user/usr_9da6843d-5203-474b-be08-d723ade92e19",
+				"type": 301
+			}
 		]
 	},
 	"emulators": {
