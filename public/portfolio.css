@@ -84,7 +84,7 @@ Content container
 Content alignment
 */
 
-h1, h2, h3 {
+h1, h2, h3, .text-align-center {
 	text-align: center;
 }
 
