@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+	<channel>
+
+		<title>MobiusK - Portfolio</title>
+		<link>https://mobiusk.com</link>
+		<description>Personal projects and interests</description>
+		<language>en</language>
+		<lastBuildDate>Mon, 06 Mar 2023</lastBuildDate>
+
+		<item>
+			<title>RSS feed creation</title>
+			<description>I've started maintaining an RSS feed for my portfolio.</description>
+			<guid isPermaLink="false">f15589a6-8bf4-466f-ba5a-d526b807aa2e</guid>
+			<pubDate>Mon, 06 Mar 2023</pubDate>
+		</item>
+
+	</channel>
+</rss>
