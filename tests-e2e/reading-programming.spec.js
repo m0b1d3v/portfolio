@@ -1,14 +1,18 @@
 const { test, expect } = require('@playwright/test');
+const AxeBuilder = require("@axe-core/playwright").default;
 
 test.describe("Programming readings page", () => {
 
+	test.beforeEach(async ({ page }) => await page.goto('/reading/programming'));
+
 	test("loads", async ({ page }) => {
-
-		await page.goto('/reading/programming');
-
 		await expect(page).toHaveScreenshot({ fullPage: true });
-
 		await expect(page).toHaveTitle("Mobi's Programming Reading");
+	});
+
+	test("no automatically detectable accessibility issues", async ({ page }) => {
+		const scanResults = await new AxeBuilder({ page }).analyze();
+		expect (scanResults.violations).toEqual([]);
 	});
 
 });
