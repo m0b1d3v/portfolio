@@ -17,3 +17,7 @@ node_modules
 firebase-debug.log
 .firebase
 .firebaserc
+
+# Test system(s)
+tests-e2e/results/
+playwright/.cache/

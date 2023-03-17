@@ -1,9 +1,12 @@
 {
 	"scripts": {
-		"emulate": "firebase emulators:start",
+		"start": "firebase emulators:start",
+		"snapshots": "playwright test --update-snapshots",
+		"e2e": "playwright test",
 		"deploy": "firebase deploy"
 	},
 	"devDependencies": {
+		"@playwright/test": "^1.31.2",
 		"firebase-tools": "^11.24.0"
 	}
 }
