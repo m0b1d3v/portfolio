@@ -19,6 +19,5 @@ firebase-debug.log
 .firebaserc
 
 # Test system(s)
-tests-e2e/*-snapshots/
-tests-e2e/results/
+tests-e2e/screenshots/
 playwright/.cache/

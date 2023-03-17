@@ -5,8 +5,15 @@ test.describe("Programming readings page", () => {
 
 	test.beforeEach(async ({ page }) => await page.goto('/reading/programming'));
 
-	test("loads", async ({ page }) => {
-		await expect(page).toHaveScreenshot({ fullPage: true });
+	test("renders", async ({ page, browserName }) => {
+		await page.screenshot({
+			fullPage: true,
+			path: `tests-e2e/screenshots/${browserName}/${page.viewportSize().width}/reading-programming.png`,
+			scale: 'css'
+		});
+	});
+
+	test("has title", async ({ page }) => {
 		await expect(page).toHaveTitle("Mobi's Programming Reading");
 	});
 

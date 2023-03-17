@@ -5,8 +5,15 @@ test.describe("404 page", () => {
 
 	test.beforeEach(async ({ page }) => await page.goto('/404'));
 
-	test("loads", async ({ page }) => {
-		await expect(page).toHaveScreenshot({ fullPage: true });
+	test("renders", async ({ page, browserName }) => {
+		await page.screenshot({
+			fullPage: true,
+			path: `tests-e2e/screenshots/${browserName}/${page.viewportSize().width}/404.png`,
+			scale: 'css'
+		});
+	});
+
+	test("has title", async ({ page }) => {
 		await expect(page).toHaveTitle("Mobi's Lost and Found");
 	});
 

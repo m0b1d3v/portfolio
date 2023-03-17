@@ -1,7 +1,6 @@
 {
 	"scripts": {
 		"start": "firebase emulators:start",
-		"snapshots": "playwright test --update-snapshots",
 		"e2e": "playwright test",
 		"deploy": "firebase deploy"
 	},

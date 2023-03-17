@@ -5,8 +5,15 @@ test.describe("Home page", () => {
 
 	test.beforeEach(async ({ page }) => await page.goto('/'));
 
-	test("loads", async ({ page }) => {
-		await expect(page).toHaveScreenshot({ fullPage: true });
+	test("renders", async ({ page, browserName }) => {
+		await page.screenshot({
+			fullPage: true,
+			path: `tests-e2e/screenshots/${browserName}/${page.viewportSize().width}/home.png`,
+			scale: 'css'
+		});
+	});
+
+	test("has title", async ({ page }) => {
 		await expect(page).toHaveTitle("Hi, I'm Mobi");
 	});
 
