@@ -32,6 +32,7 @@ module.exports = defineConfig({
 		{ name: 'chromium-mobile', use: {browserName: 'chromium', viewport: { width: 360, height: 640 }}},
 
 		{ name: 'firefox', use: {browserName: 'firefox'}},
+		{ name: 'firefox-mobile', use: {browserName: 'firefox', viewport: { width: 360, height: 640 }}},
 
 		{ name: 'webkit', use: {browserName: 'webkit'}},
 		{ name: 'webkit-mobile', use: {browserName: 'webkit', viewport: { width: 360, height: 640 }}},
