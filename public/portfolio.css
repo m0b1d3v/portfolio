@@ -91,7 +91,7 @@ Header from content separation
 hr {
 	background-color: var(--color-background);
 	border: none;
-	filter: brightness(1.05);
+	filter: brightness(1.5);
 	height: 2px;
 	margin: 1.5rem 0;
 }
