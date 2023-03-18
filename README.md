@@ -4,7 +4,8 @@ Personal projects and interests.
 
 This project focuses on using the HEC (HTML, EcmaScript, CSS) stack as an exercise in simplicity and standards.
 My belief is that the explosion of front-end frameworks has masked great advancements in browser technology.
-All aspects of development here should be possible with just a browser, an editor, and ever-present NPM magic.
+A self-imposed limitation here is that all aspects of development here should be possible without a JavaScript framework.
+The web server, testing, and deploys unfortunately still rely on NPM tooling.
 
 ## Testing
 
