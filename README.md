@@ -14,8 +14,10 @@ It allows me to quickly generate screenshots of all pages in multiple browsers f
 It also allows me to programmatically verify that content exists roughly where and how I want it.
 There was no thorough analysis on choosing Playwright, but it did beat out Cypress, Protractor, and Storybook.
 
-If this is your first checkout make sure you do `npm run snapshots` before any e2e tests to generate comparison visuals.
-If you do `npm run e2e` without it all tests will error out because they expect a snapshot.
+If this is your first checkout make sure you do `npm run e2e-snapshots` before any e2e tests to generate comparison visuals.
+If you do `npm run e2e-visual` without it all tests will error out because they expect a snapshot.
+The content test via `npm run e2e-content` does not rely on snapshots and only runs in one browser for speed.
+Running all tests can be done with `npm run e2e`.
 
 ## Attributions
 

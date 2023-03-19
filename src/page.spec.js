@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 const AxeBuilder = require("@axe-core/playwright").default;
 
-test.describe('Home page', () => {
+test.describe('New page', () => {
 
 	test.beforeEach(async ({ page }) => await page.goto('/'));
 
@@ -15,19 +15,11 @@ test.describe('Home page', () => {
 	});
 
 	test('intro', async ({ page }) => {
-		await expect(page).toHaveTitle("Hi, I'm Mobi");
-		await expect(page.getByRole('heading', { name: "Hi, I'm Mobi" })).toBeVisible();
+		await expect(page).toHaveTitle("New page");
+		await expect(page.getByRole('heading', { name: "New page" })).toBeVisible();
 	});
 
 	test('content', async ({ page }) => {
-
-		const expectedHeadings = ['Projects', 'Work', 'Links'];
-
-		for (const heading of expectedHeadings) {
-			await expect(page.getByRole('heading', { name: heading })).toBeVisible();
-		}
-
-		await expect(page.getByRole('list')).toHaveCount(expectedHeadings.length);
 
 	});
 
