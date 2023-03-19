@@ -7,7 +7,7 @@ test.describe(pageLink, () => {
 
 	test.beforeEach(async ({ page }) => await page.goto(pageLink));
 
-	coverBasics(test, "Mobi's Programming Reading", "Mobi's Programming Reading");
+	coverBasics(test, "Mobi's Programming Research", "Mobi's Programming Research");
 
 	checkDeadLinks(test, pageLink, 1, { name: 'Go back' });
 
