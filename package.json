@@ -2,7 +2,7 @@
 	"scripts": {
 		"start": "firebase emulators:start",
 		"e2e-snapshots": "playwright test --update-snapshots --grep render",
-		"e2e-visual": "playwright test --grep render",
+		"e2e-visual": "playwright test --grep render --project=firefox",
 		"e2e-content": "playwright test --grep-invert render --project=firefox",
 		"e2e": "playwright test",
 		"deploy": "firebase deploy"

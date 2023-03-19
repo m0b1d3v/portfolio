@@ -15,9 +15,9 @@ It also allows me to programmatically verify that content exists roughly where a
 There was no thorough analysis on choosing Playwright, but it did beat out Cypress, Protractor, and Storybook.
 
 If this is your first checkout make sure you do `npm run e2e-snapshots` before any e2e tests to generate comparison visuals.
-If you do `npm run e2e-visual` without it all tests will error out because they expect a snapshot.
-The content test via `npm run e2e-content` does not rely on snapshots and only runs in one browser for speed.
-Running all tests can be done with `npm run e2e`.
+The visual test `npm run e2e-visual` runs only in Firefox for speed and requires snapshots to pre-exist.
+The content test via `npm run e2e-content` also only runs in Firefox but does not rely on snapshots.
+Running all visual and content tests in all configured browsers can be done with `npm run e2e`.
 
 ## Attributions
 
