@@ -1,13 +1,13 @@
 const { test, expect } = require('@playwright/test');
 const {coverBasics, checkDeadLinks} = require("./util-e2e");
 
-const pageLink = '/research/programming';
+const pageLink = '/research/code';
 
 test.describe(pageLink, () => {
 
 	test.beforeEach(async ({ page }) => await page.goto(pageLink));
 
-	coverBasics(test, "Mobi's Programming Research", "Mobi's Programming Research");
+	coverBasics(test, "Mobi's Code Research", "Mobi's Code Research");
 
 	checkDeadLinks(test, pageLink, 1, { name: 'Go back' });
 
