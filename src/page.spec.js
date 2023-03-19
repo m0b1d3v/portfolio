@@ -1,26 +1,14 @@
-const { test, expect } = require('@playwright/test');
-const AxeBuilder = require("@axe-core/playwright").default;
+const { test } = require('@playwright/test');
+const {coverBasics, checkDeadLinks} = require("../tests-e2e/util-e2e");
 
-test.describe('New page', () => {
+const pageLink = '/';
 
-	test.beforeEach(async ({ page }) => await page.goto('/'));
+test.describe(pageLink, () => {
 
-	test('renders', async ({ page }) => {
-		await expect(page).toHaveScreenshot({fullPage: true, scale: 'css'});
-	});
+	test.beforeEach(async ({ page }) => await page.goto(pageLink));
 
-	test('no automatically detectable accessibility issues', async ({ page }) => {
-		const scanResults = await new AxeBuilder({ page }).analyze();
-		expect (scanResults.violations).toEqual([]);
-	});
+	coverBasics(test, 'New page', 'New page');
 
-	test('intro', async ({ page }) => {
-		await expect(page).toHaveTitle("New page");
-		await expect(page.getByRole('heading', { name: "New page" })).toBeVisible();
-	});
-
-	test('content', async ({ page }) => {
-
-	});
+	checkDeadLinks(test, pageLink, 0);
 
 });

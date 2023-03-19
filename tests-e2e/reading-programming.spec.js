@@ -1,39 +1,15 @@
 const { test, expect } = require('@playwright/test');
-const {TITLE_404_PAGE} = require("./404.spec");
-const AxeBuilder = require('@axe-core/playwright').default;
+const {coverBasics, checkDeadLinks} = require("./util-e2e");
 
-test.describe('Programming readings page', () => {
+const pageLink = '/research/programming';
 
-	const pageLink = '/research/programming';
+test.describe(pageLink, () => {
 
 	test.beforeEach(async ({ page }) => await page.goto(pageLink));
 
-	test('renders', async ({ page }) => {
-		await expect(page).toHaveScreenshot({fullPage: true, scale: 'css'});
-	});
+	coverBasics(test, "Mobi's Programming Reading", "Mobi's Programming Reading");
 
-	test('no automatically detectable accessibility issues', async ({ page }) => {
-		const scanResults = await new AxeBuilder({ page }).analyze();
-		expect (scanResults.violations).toEqual([]);
-	});
-
-	test('has intro', async ({ page }) => {
-		await expect(page).toHaveTitle("Mobi's Programming Reading");
-		await expect(page.getByRole('heading', { name: "Mobi's Programming Reading" })).toBeVisible();
-	});
-
-	test('no dead links', async ({ page }) => {
-
-		const links = await page.getByRole('link', { name: 'Go back' });
-
-		await expect(links).toHaveCount(1);
-
-		for (const link of await links.all()) {
-			await link.click();
-			await expect(page).not.toHaveTitle(TITLE_404_PAGE);
-			await page.goto(pageLink);
-		}
-	});
+	checkDeadLinks(test, pageLink, 1, { name: 'Go back' });
 
 	test('has content', async ({ page }) => {
 		const expectedEntries = 4;
