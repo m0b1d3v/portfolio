@@ -1,9 +1,12 @@
 const { test, expect } = require('@playwright/test');
+const {TITLE_404_PAGE} = require("./404.spec");
 const AxeBuilder = require("@axe-core/playwright").default;
 
 test.describe('Home page', () => {
 
-	test.beforeEach(async ({ page }) => await page.goto('/'));
+	const pageLink = '/';
+
+	test.beforeEach(async ({ page }) => await page.goto(pageLink));
 
 	test('renders', async ({ page }) => {
 		await expect(page).toHaveScreenshot({fullPage: true, scale: 'css'});
@@ -14,12 +17,33 @@ test.describe('Home page', () => {
 		expect (scanResults.violations).toEqual([]);
 	});
 
-	test('intro', async ({ page }) => {
+	test('has intro', async ({ page }) => {
 		await expect(page).toHaveTitle("Hi, I'm Mobi");
 		await expect(page.getByRole('heading', { name: "Hi, I'm Mobi" })).toBeVisible();
 	});
 
-	test('content', async ({ page }) => {
+	test('no dead links', async ({ page }) => {
+
+		const links = await page.getByRole('link');
+
+		await expect(links).toHaveCount(7);
+
+		const textNotToClick = ['Email', 'Discord', 'Github', 'Twitter'];
+
+		for (const link of await links.all()) {
+
+			let linkText = await link.textContent();
+			if (textNotToClick.includes(linkText)) {
+				continue;
+			}
+
+			await link.click();
+			await expect(page).not.toHaveTitle(TITLE_404_PAGE);
+			await page.goto(pageLink);
+		}
+	});
+
+	test('has content', async ({ page }) => {
 
 		const expectedHeadings = ['Projects', 'Work', 'Links'];
 
