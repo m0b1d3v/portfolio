@@ -1,5 +1,7 @@
 :root {
+	--border-radius: 1rem;
 	--color-background: #242424;
+	--color-background-darker: #121212;
 	--color-background-lighter: #353535;
 	--color-primary: #634677;
 	--content-padding: 1.5rem;
@@ -65,6 +67,10 @@ h6, a, p, li {
 	font-size: 1.5rem;
 }
 
+figcaption a {
+	font-size: 1rem;
+}
+
 /*
 Content container
 */
@@ -107,6 +113,40 @@ a {
 
 a:hover {
 	filter: brightness(1.25);
+}
+
+/*
+Images
+*/
+
+figure {
+	/* Some browsers add margins to figure elements by default which is undesirable */
+	margin: var(--content-padding) 0;
+}
+
+figcaption {
+	background-color: var(--color-background-darker);
+	border-bottom-left-radius: var(--border-radius);
+	border-bottom-right-radius: var(--border-radius);
+	padding: calc(var(--content-padding) / 2) var(--content-padding);
+}
+
+img {
+
+	border-top-left-radius: var(--border-radius);
+	border-top-right-radius: var(--border-radius);
+	max-height: 60vw;
+	max-width: 100%;
+
+	/* Broken/loading images will display a lighter background and vertically centered alt text */
+	background-color: var(--color-background-lighter);
+	display: flex;
+	align-items: center;
+}
+
+img::before {
+	/* Give alt text some breathing room */
+	padding: var(--content-padding);
 }
 
 /*
