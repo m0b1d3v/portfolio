@@ -2,6 +2,7 @@
 	--color-background: #242424;
 	--color-background-lighter: #353535;
 	--color-primary: #634677;
+	--content-padding: 1.5rem;
 	--min-content-width: 300px;
 	--max-content-width: 640px;
 }
@@ -72,7 +73,7 @@ main {
 	flex-grow: 1;
 	margin: 0 auto;
 	max-width: calc(var(--max-content-width) - 64px);
-	padding: 1.5rem;
+	padding: var(--content-padding);
 }
 
 /*
@@ -83,7 +84,7 @@ hr {
 	background-color: var(--color-background-lighter);
 	border: none;
 	height: 2px;
-	margin: 1.5rem 0;
+	margin: var(--content-padding) 0;
 }
 
 /*
