@@ -1,5 +1,6 @@
 :root {
 	--color-background: #242424;
+	--color-background-lighter: #353535;
 	--color-primary: #634677;
 	--max-content-width: 900px;
 	--min-content-width: 300px;
@@ -79,9 +80,8 @@ Header from content separation
 */
 
 hr {
-	background-color: var(--color-background);
+	background-color: var(--color-background-lighter);
 	border: none;
-	filter: brightness(1.5);
 	height: 2px;
 	margin: 1.5rem 0;
 }
