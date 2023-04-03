@@ -2,8 +2,8 @@
 	--color-background: #242424;
 	--color-background-lighter: #353535;
 	--color-primary: #634677;
-	--max-content-width: 900px;
 	--min-content-width: 300px;
+	--max-content-width: 640px;
 }
 
 /*
