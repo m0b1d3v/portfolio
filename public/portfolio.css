@@ -2,6 +2,7 @@
 	--color-background: #242424;
 	--color-primary: #634677;
 	--max-content-width: 900px;
+	--min-content-width: 300px;
 }
 
 /*
@@ -16,7 +17,7 @@ body, html {
 }
 
 html {
-	min-width: 300px;
+	min-width: var(--min-content-width);
 }
 
 body {
