@@ -7,11 +7,12 @@ const {default: AxeBuilder} = require("@axe-core/playwright");
  * @param {any} test - Playwright test object
  * @param {string} title - Page head tag for title
  * @param {string} mainHeading - First h1 tag in page
+ * @param {boolean} fullPageScreenshot - Whether to take a full page screenshot during the render test
  */
-export function coverBasics(test, title, mainHeading) {
+export function coverBasics(test, title, mainHeading, fullPageScreenshot = true) {
 
 	test('renders', async ({ page }) => {
-		await expect(page).toHaveScreenshot({fullPage: true, scale: 'css'});
+		await expect(page).toHaveScreenshot({fullPage: fullPageScreenshot, scale: 'css'});
 	});
 
 	test('no automatically detectable accessibility issues', async ({ page }) => {
