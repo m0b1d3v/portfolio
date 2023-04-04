@@ -1,5 +1,3 @@
-import {TITLE_404_PAGE} from "./404.spec";
-
 const {expect} = require("@playwright/test");
 const {default: AxeBuilder} = require("@axe-core/playwright");
 
@@ -58,7 +56,7 @@ export function checkDeadLinks(
 			}
 
 			await link.click();
-			await expect(page).not.toHaveTitle(TITLE_404_PAGE);
+			await expect(page).not.toHaveTitle("Mobi's Lost and Found");
 			await page.goto(pageLink);
 		}
 	});
