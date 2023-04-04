@@ -12,7 +12,7 @@ test.describe(pageLink, () => {
 	checkDeadLinks(
 		test,
 		pageLink,
-		6,
+		7,
 		{},
 		['Email', 'Discord', 'Github', 'Twitter']
 	);
