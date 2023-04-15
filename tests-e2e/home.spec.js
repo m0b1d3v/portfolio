@@ -1,21 +1,27 @@
 const { test, expect } = require('@playwright/test');
-const {coverBasics, checkDeadLinks} = require("./util-e2e");
+const {Fixture} = require("./fixture");
 
 const pageLink = '/';
 
 test.describe(pageLink, () => {
 
-	test.beforeEach(async ({ page }) => await page.goto(pageLink));
+	let fixture;
 
-	coverBasics(test, "Hi, I'm Mobi", "Hi, I'm Mobi");
+	test.beforeEach(async ({ page }) => {
+		await page.goto(pageLink);
+		fixture = new Fixture(page);
+	});
 
-	checkDeadLinks(
-		test,
+	test('accessibility', () => fixture.accessibility());
+	test('renders', () => fixture.screenshot());
+	test('title', () => fixture.title("Hi, I'm Mobi"));
+	test('heading', () => fixture.heading("Hi, I'm Mobi"));
+	test('dead links', () => fixture.checkForDeadLinks(
 		pageLink,
 		7,
 		{},
 		['Email', 'Discord', 'Github', 'Twitter']
-	);
+	));
 
 	test('has content', async ({ page }) => {
 
