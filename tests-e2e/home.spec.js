@@ -18,14 +18,14 @@ test.describe(pageLink, () => {
 	test('heading', () => fixture.heading("Hi, I'm Mobi"));
 	test('dead links', () => fixture.checkForDeadLinks(
 		pageLink,
-		7,
+		8,
 		{},
 		['Email', 'Discord', 'Github', 'Twitter']
 	));
 
 	test('has content', async ({ page }) => {
 
-		const expectedHeadings = ['Projects', 'Work', 'Links'];
+		const expectedHeadings = ['Projects', 'Code', 'VRChat', 'Work', 'Links'];
 
 		for (const heading of expectedHeadings) {
 			await expect(page.getByRole('heading', { name: heading })).toBeVisible();
