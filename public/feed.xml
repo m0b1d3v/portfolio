@@ -6,7 +6,15 @@
 		<link>https://mobiusk.com</link>
 		<description>Personal projects and interests</description>
 		<language>en</language>
-		<lastBuildDate>Mon, 12 Mar 2023</lastBuildDate>
+		<lastBuildDate>Mon, 15 Apr 2023</lastBuildDate>
+
+		<item>
+			<title>Mobi's VRChat gallery</title>
+			<description>Linking all my photo shoot albums in VRChat.</description>
+			<link>https://mobiusk.com/vrchat/gallery</link>
+			<guid isPermaLink="false">eb014235-8d9c-42b1-8c0c-439f54c800b5</guid>
+			<pubDate> Sat, 15 Apr 2023</pubDate>
+		</item>
 
 		<item>
 			<title>Mobi's code research</title>
