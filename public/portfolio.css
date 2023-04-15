@@ -116,7 +116,8 @@ a:hover {
 }
 
 /*
-Images
+Figure images should always be 16:9 ratio regardless of screen size
+This code was adapted from https://css-tricks.com/aspect-ratio-boxes/
 */
 
 figure {
@@ -124,29 +125,65 @@ figure {
 	margin: var(--content-padding) 0;
 }
 
-figcaption {
-	background-color: var(--color-background-darker);
-	border-bottom-left-radius: var(--border-radius);
-	border-bottom-right-radius: var(--border-radius);
-	padding: calc(var(--content-padding) / 2) var(--content-padding);
+figure .aspect-ratio-box {
+	height: 0;
+	padding-top: calc((9 / 16) * 100%);
+	position: relative;
 }
 
-img {
+figure .aspect-ratio-box img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
 
-	border-top-left-radius: var(--border-radius);
-	border-top-right-radius: var(--border-radius);
-	max-height: 60vw;
-	max-width: 100%;
+/*
+Figure images alt text should have breathing room and (on some browsers) be vertically centered
+*/
 
-	/* Broken/loading images will display a lighter background and vertically centered alt text */
-	background-color: var(--color-background-lighter);
+figure .aspect-ratio-box img {
 	display: flex;
 	align-items: center;
 }
 
-img::before {
-	/* Give alt text some breathing room */
+figure .aspect-ratio-box img::before {
 	padding: var(--content-padding);
+}
+
+/*
+Figure captions should have a little bit of breathing room
+*/
+
+figcaption {
+	padding: calc(var(--content-padding) / 2) var(--content-padding);
+}
+
+/*
+Figure images and captions should differentiate themselves from the background each other
+*/
+
+figure .aspect-ratio-box img {
+	background-color: var(--color-background-lighter);
+}
+
+figcaption {
+	background-color: var(--color-background-darker);
+}
+
+/*
+Figure images and captions should be rounded to ease transitions
+*/
+
+figure .aspect-ratio-box img {
+	border-top-left-radius: var(--border-radius);
+	border-top-right-radius: var(--border-radius);
+}
+
+figcaption {
+	border-bottom-left-radius: var(--border-radius);
+	border-bottom-right-radius: var(--border-radius);
 }
 
 /*
