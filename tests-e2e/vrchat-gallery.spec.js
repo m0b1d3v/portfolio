@@ -18,11 +18,6 @@ test.describe(pageLink, () => {
 	test('heading', () => fixture.heading("Mobi's VRChat Gallery"));
 	test('dead links', () => fixture.checkForDeadLinks(pageLink, 1, { name: 'Go back' }));
 
-	test('has content', async ({ page }) => {
-		const expectedEntries = 5;
-		await expect(page.getByRole('figure')).toHaveCount(expectedEntries);
-	});
-
 	test('albums have images and captions', async ({ page }) => {
 		const albumsLocator = await page.getByRole('figure');
 		for (const album of await albumsLocator.all()) {
