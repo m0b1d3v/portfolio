@@ -13,7 +13,7 @@ test.describe(pageLink, () => {
 	});
 
 	test('accessibility', () => fixture.accessibility());
-	test('renders', () => fixture.screenshot());
+	test('renders', async ({ page }) => await expect(page).toHaveScreenshot());
 	test('title', () => fixture.title("Mobi's VRChat Gallery"));
 	test('heading', () => fixture.heading("Mobi's VRChat Gallery"));
 	test('dead links', () => fixture.checkForDeadLinks(pageLink, 1, { name: 'Go back' }));
