@@ -16,11 +16,7 @@ test.describe(pageLink, () => {
 	test('renders', () => fixture.screenshot());
 	test('title', () => fixture.title("Hi, I'm Mobi"));
 	test('heading', () => fixture.heading("Hi, I'm Mobi"));
-	test('dead links', () => fixture.checkForDeadLinks(
-		pageLink,
-		9,
-		{},
-	));
+	test('dead links', () => fixture.checkForDeadLinks(pageLink, 10, {}));
 
 	test('has content', async ({ page }) => {
 
