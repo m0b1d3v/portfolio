@@ -18,9 +18,9 @@ test.describe(pageLink, () => {
 	test('heading', () => fixture.heading("Hi, I'm Mobi"));
 	test('dead links', () => fixture.checkForDeadLinks(
 		pageLink,
-		8,
+		9,
 		{},
-		['Email', 'Discord', 'Github', 'Twitter']
+		['Email', 'Discord', 'Github', 'Scripts', 'Twitter']
 	));
 
 	test('has content', async ({ page }) => {
