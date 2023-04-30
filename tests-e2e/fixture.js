@@ -49,13 +49,11 @@ export class Fixture {
 	 * @param {string} pageLink - Absolute href to return to after clicking each found link
 	 * @param {int} expectedLinkCount - How many links should match the given locator
 	 * @param {{name?: string|RegExp}} locatorOptions - Extra locator options to pass for narrowing down links found on page
-	 * @param {array<string>} avoidLinksWithThisText - Links to include in expectedLinkCount but not to be clicked on
 	 */
 	async checkForDeadLinks(
 		pageLink,
 		expectedLinkCount,
-		locatorOptions = {},
-		avoidLinksWithThisText = []
+		locatorOptions = {}
 	) {
 
 		const links = await this.page.getByRole('link', locatorOptions);
@@ -65,7 +63,7 @@ export class Fixture {
 		for (const link of await links.all()) {
 
 			let linkText = await link.textContent();
-			if (avoidLinksWithThisText.includes(linkText)) {
+			if ("Email" === linkText) {
 				continue;
 			}
 

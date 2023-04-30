@@ -20,7 +20,6 @@ test.describe(pageLink, () => {
 		pageLink,
 		9,
 		{},
-		['Email', 'Discord', 'Github', 'Scripts', 'Twitter']
 	));
 
 	test('has content', async ({ page }) => {
