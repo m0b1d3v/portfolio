@@ -131,6 +131,10 @@ figure .aspect-ratio-box {
 	position: relative;
 }
 
+figure .aspect-ratio-box.square {
+	padding-top: 100%;
+}
+
 figure .aspect-ratio-box img {
 	position: absolute;
 	top: 0;
@@ -168,6 +172,10 @@ figure .aspect-ratio-box img {
 	background-color: var(--color-background-lighter);
 }
 
+figure .aspect-ratio-box.square img {
+	background-color: transparent;
+}
+
 figcaption {
 	background-color: var(--color-background-darker);
 }
@@ -181,7 +189,7 @@ figure .aspect-ratio-box img {
 	border-top-right-radius: var(--border-radius);
 }
 
-figcaption {
+figure.no-caption img, figcaption {
 	border-bottom-left-radius: var(--border-radius);
 	border-bottom-right-radius: var(--border-radius);
 }
