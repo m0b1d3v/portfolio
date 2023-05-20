@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="description" content="Personal projects and interests">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>VRSVP</title>
+
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+		<link rel="manifest" href="/favicons/site.webmanifest">
+
+		<link rel="stylesheet" href="/portfolio.css">
+
+	</head>
+
+	<body>
+		<main>
+
+			<div>
+
+				<h1>VRSVP</h1>
+
+				<a href="/">&lArr; Go back</a>
+
+				<p>
+					This is a Discord bot I have created to help people sign up for events.
+					Unlike similar bots, most content can be changed by a administrator after creation.
+					It has the ability to set limits on signups per time slot or person.
+				</p>
+
+				<p>
+					The bot is currently in a limited beta test rollout.
+					Contact me for adding the bot to your server.
+					It can also be self-hosted using the <a href="https://github.com/mobiusk/vrsvp">source code</a>.
+				</p>
+
+			</div>
+
+			<hr>
+
+			<div id="example">
+
+				<h2>Example</h2>
+
+				<p>
+					This (small) screenshot shows what a generated RSVP form looks like,
+					the buttons someone can use to sign up,
+					and the command used to generate the shown form.
+				</p>
+
+				<figure class="no-caption">
+					<a href="https://firebasestorage.googleapis.com/v0/b/portfolio-d2dd0.appspot.com/o/vrsvp-example.webp?alt=media&token=fcc041cc-70b8-48b6-90f5-f1608121d98d">
+						<div class="aspect-ratio-box">
+							<img
+								alt="Discord screenshot showing a generated RSVP form, signup buttons, and command example"
+								src="https://firebasestorage.googleapis.com/v0/b/portfolio-d2dd0.appspot.com/o/vrsvp-example-thumbnail.webp?alt=media&token=4d8b4ef6-c66c-4e5d-b15f-16e05c70a261"
+								width="640" height="360"
+							>
+						</div>
+					</a>
+				</figure>
+
+			</div>
+
+			<hr>
+
+			<div id="command-options">
+
+				<h2>Command Options</h2>
+
+				<ul>
+					<li>
+						<kbd>start</kbd>: <a href="https://hammertime.cyou/">HammerTime</a> timestamp.
+					</li>
+					<li>
+						<kbd>blocks</kbd>: Number of slot groups to build.
+					</li>
+					<li>
+						<kbd>slots</kbd>: Number of slots per block to build.
+					</li>
+					<li>
+						<kbd>duration</kbd>: How long each slot lasts in minutes.
+					</li>
+					<li>
+						<kbd>rsvp-limit-per-person</kbd>: Optional, a person cannot sign up for more slots than this.
+					</li>
+					<li>
+						<kbd>rsvp-limit-per-slot</kbd>: Optional, a slot cannot have more people signed up than this.
+					</li>
+				</ul>
+
+			</div>
+
+			<hr>
+
+			<div id="editing">
+
+				<h2>Editing</h2>
+
+				<p>
+					The event description and each block can be edited from within Discord by a server administrator.
+					This allows correcting timestamps, giving more information, re-arranging individuals, and more.
+					It is helpful to be aware of <a href="https://support.discord.com/hc/en-us/articles/210298617-Markdown-Text-101-Chat-Formatting-Bold-Italic-Underline-">Discord text formatting</a>.
+				</p>
+
+				<ul>
+					<li>
+						These lines in event description set RSVP limits:
+						<ul>
+							<li><kbd>Maximum number of people that can RSVP for a single slot: (limit)</kbd></li>
+							<li><kbd>Maximum number of slots a person can RSVP for: (limit)</kbd></li>
+						</ul>
+					</li>
+					<li>
+						Any block line that starts with this is a slot:
+						<ul>
+							<li><kbd>> #</kbd></li>
+						</ul>
+					</li>
+				</ul>
+
+			</div>
+
+			<hr>
+
+			<div id="discord-limitations">
+
+				<h2>Discord Limitations</h2>
+
+				<ul>
+					<li>RSVP form cannot be more than 6,000 characters so long announcements are best done before or after the poll</li>
+					<li>We cannot have more than 10 blocks so long events are best broken up into many polls</li>
+					<li>We cannot have more than 25 signup buttons (slots)</li>
+					<li>Many people using this at once might rate-limit the bot, always double-check your RSVP went through</li>
+				</ul>
+
+			</div>
+
+			<hr>
+
+			<div id="future-features">
+
+				<h2>Future Features</h2>
+
+				<ul>
+					<li>Optimization to avoid potential rate limits from Discord</li>
+					<li>Disabling slot toggle buttons if limits are reached</li>
+					<li>Signup queue for slots in case anyone drops out</li>
+					<li>Block color codes</li>
+					<li>Outputting CSV text for record keeping</li>
+					<li>Ability to add, delete, and move blocks</li>
+					<li>User role manipulation upon signup</li>
+					<li>Notification/reminder messages</li>
+					<li>Event templates</li>
+				</ul>
+
+			</div>
+
+		</main>
+	</body>
+
+</html>

@@ -6,7 +6,15 @@
 		<link>https://mobiusk.com</link>
 		<description>Personal projects and interests</description>
 		<language>en</language>
-		<lastBuildDate>Sat, 06 May 2023</lastBuildDate>
+		<lastBuildDate>Sat, 20 May 2023</lastBuildDate>
+
+		<item>
+			<title>VRSVP beta project write up added</title>
+			<description>A new Discord bot I built for a friend is lightly documented here.</description>
+			<link>https://mobiusk.com/code/vrsvp</link>
+			<guid isPermaLink="false">cda172da-a1a8-47f3-859a-286c9d591a67</guid>
+			<pubDate>Sat, 20 May 2023</pubDate>
+		</item>
 
 		<item>
 			<title>The Arcade gallery and change log added</title>
