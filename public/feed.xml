@@ -6,7 +6,15 @@
 		<link>https://mobiusk.com</link>
 		<description>Personal projects and interests</description>
 		<language>en</language>
-		<lastBuildDate>Sat, 20 May 2023</lastBuildDate>
+		<lastBuildDate>Sat, 21 May 2023</lastBuildDate>
+
+		<item>
+			<title>VRSVP beta project updated</title>
+			<description>New example screenshots have been added and command options adjusted.</description>
+			<link>https://mobiusk.com/code/vrsvp</link>
+			<guid isPermaLink="false">c76a5416-6731-4818-8cd5-378c138cf447</guid>
+			<pubDate>Sat, 21 May 2023</pubDate>
+		</item>
 
 		<item>
 			<title>VRSVP beta project write up added</title>

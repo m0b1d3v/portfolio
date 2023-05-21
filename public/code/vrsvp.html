@@ -45,24 +45,67 @@
 
 			<div id="example">
 
-				<h2>Example</h2>
+				<h2>Examples</h2>
 
 				<p>
-					This (small) screenshot shows what a generated RSVP form looks like,
+					These show what a generated RSVP form looks like,
 					the buttons someone can use to sign up,
 					and the command used to generate the shown form.
 				</p>
 
-				<figure class="no-caption">
-					<a href="https://firebasestorage.googleapis.com/v0/b/portfolio-d2dd0.appspot.com/o/vrsvp-example.webp?alt=media&token=fcc041cc-70b8-48b6-90f5-f1608121d98d">
-						<div class="aspect-ratio-box">
-							<img
-								alt="Discord screenshot showing a generated RSVP form, signup buttons, and command example"
-								src="https://firebasestorage.googleapis.com/v0/b/portfolio-d2dd0.appspot.com/o/vrsvp-example-thumbnail.webp?alt=media&token=4d8b4ef6-c66c-4e5d-b15f-16e05c70a261"
-								width="640" height="360"
-							>
-						</div>
-					</a>
+				<figure>
+					<img
+						alt="Command and generated RSVP form with six slots"
+						src="https://firebasestorage.googleapis.com/v0/b/portfolio-d2dd0.appspot.com/o/vrsvp-example-creation.webp?alt=media&token=0a1ce599-94d5-4c29-87e1-6e9dd01fa0a3"
+						width="640" height="475"
+					>
+					<figcaption>
+						Command and generated RSVP form with six slots.
+					</figcaption>
+				</figure>
+
+				<figure>
+					<img
+						alt="Command and generated RSVP form with signup limits"
+						src="https://firebasestorage.googleapis.com/v0/b/portfolio-d2dd0.appspot.com/o/vrsvp-example-creation-limits.webp?alt=media&token=27b31fa7-5e24-417e-9b2b-1012404e7291"
+						width="640" height="450"
+					>
+					<figcaption>
+						Command and generated RSVP form with signup limits.
+					</figcaption>
+				</figure>
+
+				<figure>
+					<img
+						alt="Signup example"
+						src="https://firebasestorage.googleapis.com/v0/b/portfolio-d2dd0.appspot.com/o/vrsvp-example-signup.webp?alt=media&token=5aa3cf87-e349-4b94-8840-fc81fde6036b"
+						width="640" height="485"
+					>
+					<figcaption>
+						Signup example.
+					</figcaption>
+				</figure>
+
+				<figure>
+					<img
+						alt="Administrator edit actions for changing text or disabling RSVP button"
+						src="https://firebasestorage.googleapis.com/v0/b/portfolio-d2dd0.appspot.com/o/vrsvp-example-edit-actions.webp?alt=media&token=326ae016-fa16-43ca-b367-f8a2e7dab237"
+						width="640" height="255"
+					>
+					<figcaption>
+						Administrator edit actions for changing text or disabling RSVP button.
+					</figcaption>
+				</figure>
+
+				<figure>
+					<img
+						alt="Administrator text edit example"
+						src="https://firebasestorage.googleapis.com/v0/b/portfolio-d2dd0.appspot.com/o/vrsvp-example-edit-description.webp?alt=media&token=26b1a245-bf23-4caf-b927-788b93351ef7"
+						width="640" height="329"
+					>
+					<figcaption>
+						Administrator text edit example.
+					</figcaption>
 				</figure>
 
 			</div>
@@ -75,22 +118,19 @@
 
 				<ul>
 					<li>
-						<kbd>start</kbd>: <a href="https://hammertime.cyou/">HammerTime</a> timestamp.
+						<kbd>start</kbd>: <a href="https://hammertime.cyou/">HammerTime</a> timestamp
 					</li>
 					<li>
-						<kbd>blocks</kbd>: Number of slot groups to build.
+						<kbd>slots</kbd>: Timestamp slot count
 					</li>
 					<li>
-						<kbd>slots</kbd>: Number of slots per block to build.
+						<kbd>duration</kbd>: Timestamp slot length in minutes
 					</li>
 					<li>
-						<kbd>duration</kbd>: How long each slot lasts in minutes.
+						<kbd>rsvp-limit-per-person</kbd>: Optional, a person cannot sign up for more slots than this
 					</li>
 					<li>
-						<kbd>rsvp-limit-per-person</kbd>: Optional, a person cannot sign up for more slots than this.
-					</li>
-					<li>
-						<kbd>rsvp-limit-per-slot</kbd>: Optional, a slot cannot have more people signed up than this.
+						<kbd>rsvp-limit-per-slot</kbd>: Optional, a slot cannot have more people signed up than this
 					</li>
 				</ul>
 
@@ -103,7 +143,7 @@
 				<h2>Editing</h2>
 
 				<p>
-					The event description and each block can be edited from within Discord by a server administrator.
+					The event description can be edited from within Discord by a server administrator.
 					This allows correcting timestamps, giving more information, re-arranging individuals, and more.
 					It is helpful to be aware of <a href="https://support.discord.com/hc/en-us/articles/210298617-Markdown-Text-101-Chat-Formatting-Bold-Italic-Underline-">Discord text formatting</a>.
 				</p>
@@ -117,7 +157,7 @@
 						</ul>
 					</li>
 					<li>
-						Any block line that starts with this is a slot:
+						Any line that starts with this is a slot:
 						<ul>
 							<li><kbd>> #</kbd></li>
 						</ul>
@@ -133,10 +173,9 @@
 				<h2>Discord Limitations</h2>
 
 				<ul>
-					<li>RSVP form cannot be more than 6,000 characters so long announcements are best done before or after the poll</li>
-					<li>We cannot have more than 10 blocks so long events are best broken up into many polls</li>
-					<li>We cannot have more than 25 signup buttons (slots)</li>
+					<li>Event description editing is limited to 4,000 characters, so long announcements are best done outside the poll</li>
 					<li>Many people using this at once might rate-limit the bot, always double-check your RSVP went through</li>
+					<li>We cannot have more than 25 timestamp slots</li>
 				</ul>
 
 			</div>
@@ -151,9 +190,8 @@
 					<li>Optimization to avoid potential rate limits from Discord</li>
 					<li>Disabling slot toggle buttons if limits are reached</li>
 					<li>Signup queue for slots in case anyone drops out</li>
-					<li>Block color codes</li>
+					<li>Event description color code</li>
 					<li>Outputting CSV text for record keeping</li>
-					<li>Ability to add, delete, and move blocks</li>
 					<li>User role manipulation upon signup</li>
 					<li>Notification/reminder messages</li>
 					<li>Event templates</li>

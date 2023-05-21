@@ -125,6 +125,11 @@ figure {
 	margin: var(--content-padding) 0;
 }
 
+figure img {
+	max-width: 100%;
+	height: auto;
+}
+
 figure .aspect-ratio-box {
 	height: 0;
 	padding-top: calc((9 / 16) * 100%);
@@ -147,7 +152,7 @@ figure .aspect-ratio-box img {
 Figure images alt text should have breathing room and (on some browsers) be vertically centered
 */
 
-figure .aspect-ratio-box img {
+figure img, figure .aspect-ratio-box img {
 	display: flex;
 	align-items: center;
 }
@@ -184,7 +189,7 @@ figcaption {
 Figure images and captions should be rounded to ease transitions
 */
 
-figure .aspect-ratio-box img {
+figure img, figure .aspect-ratio-box img {
 	border-top-left-radius: var(--border-radius);
 	border-top-right-radius: var(--border-radius);
 }
