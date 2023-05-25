@@ -6,7 +6,15 @@
 		<link>https://mobiusk.com</link>
 		<description>Personal projects and interests</description>
 		<language>en</language>
-		<lastBuildDate>Sat, 21 May 2023</lastBuildDate>
+		<lastBuildDate>Wed, 24 May 2023</lastBuildDate>
+
+		<item>
+			<title>VRChat world photo shoot list added</title>
+			<description>The spreadsheet I use to keep track of photo-worthy worlds is linked on the home page now.</description>
+			<link>https://mobiusk.com</link>
+			<guid isPermaLink="false">f9967252-e872-4e23-be73-dc5871beb344</guid>
+			<pubDate>Wed, 24 May 2023</pubDate>
+		</item>
 
 		<item>
 			<title>VRSVP beta project updated</title>
