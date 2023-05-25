@@ -44,6 +44,15 @@ export class Fixture {
 	}
 
 	/**
+	 * Is the meta description tag of the page what we expect?
+	 *
+	 * @param {string} expected - Head meta description tag content
+	 */
+	async description(expected) {
+		await expect(this.page.locator('meta[name="description"]')).toHaveAttribute('content', expected);
+	}
+
+	/**
 	 * Given a Playwright locator to find links with, ensure that the given count is found and none 404
 	 *
 	 * @param {string} pageLink - Absolute href to return to after clicking each found link

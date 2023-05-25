@@ -16,6 +16,7 @@ test.describe(pageLink, () => {
 	test('renders', () => fixture.screenshot());
 	test('title', () => fixture.title("VRSVP"));
 	test('heading', () => fixture.heading("VRSVP"));
+	test('description', () => fixture.description("Discord schedule sign-up bot"));
 	test('dead links', () => fixture.checkForDeadLinks(pageLink, 1, { name: 'Go back' }));
 
 });

@@ -16,6 +16,7 @@ test.describe(pageLink, () => {
 	test('renders', async ({ page }) => await expect(page).toHaveScreenshot());
 	test('title', () => fixture.title("Mobi's VRChat Gallery"));
 	test('heading', () => fixture.heading("Mobi's VRChat Gallery"));
+	test('description', () => fixture.description("Photos of friends and myself"));
 	test('dead links', () => fixture.checkForDeadLinks(pageLink, 1, { name: 'Go back' }));
 
 	test('albums have images and captions', async ({ page }) => {
