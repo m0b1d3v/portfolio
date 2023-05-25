@@ -16,6 +16,7 @@ test.describe(pageLink, () => {
 	test('renders', async ({ page }) => await expect(page).toHaveScreenshot());
 	test('title', () => fixture.title("The Arcade Change Log"));
 	test('heading', () => fixture.heading("The Arcade Change Log"));
+	test('description', () => fixture.description("Small history of map work"));
 	test('dead links', () => fixture.checkForDeadLinks(pageLink, 1, { name: 'Go back' }))
 
 });

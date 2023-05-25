@@ -16,6 +16,7 @@ test.describe(pageLink, () => {
 	test('renders', async ({ page }) => await expect(page).toHaveScreenshot());
 	test('title', () => fixture.title("The Arcade"));
 	test('heading', () => fixture.heading("The Arcade"));
+	test('description', () => fixture.description("One of my first social clubs in VRChat"));
 	test('dead links', () => fixture.checkForDeadLinks(pageLink, 1, { name: 'Go back' }));
 
 	test('changelog link', () => fixture.checkForDeadLinks(pageLink, 1, { name: 'change log' }));

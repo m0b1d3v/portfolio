@@ -1,16 +1,13 @@
 {
 	"scripts": {
-		"start": "firebase emulators:start",
 		"e2e-snapshots": "playwright test --update-snapshots --grep render",
 		"e2e-visual": "playwright test --grep render --project=firefox",
 		"e2e-content": "playwright test --grep-invert render --project=firefox",
 		"e2e-ui": "playwright test --ui",
-		"e2e": "playwright test",
-		"deploy": "firebase deploy"
+		"e2e": "playwright test"
 	},
 	"devDependencies": {
 		"@axe-core/playwright": "^4.6.0",
-		"@playwright/test": "^1.31.2",
-		"firebase-tools": "^11.24.0"
+		"@playwright/test": "^1.31.2"
 	}
 }

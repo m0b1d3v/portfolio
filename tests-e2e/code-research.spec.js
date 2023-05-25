@@ -16,6 +16,7 @@ test.describe(pageLink, () => {
 	test('renders', () => fixture.screenshot());
 	test('title', () => fixture.title("Mobi's Code Research"));
 	test('heading', () => fixture.heading("Mobi's Code Research"));
+	test('description', () => fixture.description("Useful information for programming"));
 	test('dead links', () => fixture.checkForDeadLinks(pageLink, 1, { name: 'Go back' }));
 
 	test('has content', async ({ page }) => {

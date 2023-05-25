@@ -1,4 +1,4 @@
-const {defineConfig, devices} = require('@playwright/test');
+const {defineConfig} = require('@playwright/test');
 
 /**
  * @see https://playwright.dev/docs/test-configuration
@@ -16,7 +16,7 @@ module.exports = defineConfig({
 	use: {
 
 		// Base URL to use in actions like `await page.goto('/')`
-		baseURL: 'http://localhost:5000',
+		baseURL: 'http://localhost:2015',
 
 		/**
 		 * Collect trace when retrying the failed test.
@@ -43,8 +43,8 @@ module.exports = defineConfig({
 
 	// Run your local dev server before starting the tests
 	webServer: {
-	  command: 'npm run start',
-	  port: 5000,
+	  command: 'make start',
+	  port: 2015,
 	},
 
 });
