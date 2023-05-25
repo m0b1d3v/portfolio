@@ -1,0 +1,6 @@
+:2015 {
+	root * ./public
+	file_server
+	try_files {path} {path}.html {path}/index.html
+	templates
+}
