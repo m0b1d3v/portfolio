@@ -14,9 +14,7 @@ __debug_bin
 node_modules
 
 # Build system
-firebase-debug.log
-.firebase
-.firebaserc
+public/images/**/*.webp
 
 # Test system(s)
 tests-e2e/*-snapshots/
