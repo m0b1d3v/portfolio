@@ -25,3 +25,18 @@ e2e-ui:
 
 e2e:
 	npx playwright test
+
+# Transferring site to remote server
+
+transfer-check:
+	make transfer flags="n"
+
+transfer:
+	rsync \
+		-aivzO$(flags) \
+		--delete \
+		--exclude 'images/**/*.jpg' \
+		--exclude 'images/**/*.png' \
+		--chmod=D775,F664 \
+		--chown=:caddy \
+		public/ projects:/srv/portfolio/public/
