@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 const {Fixture} = require("./fixture");
 
-const pageLink = '/code/vrsvp';
+const pageLink = '/projects/vrsvp';
 
 test.describe(pageLink, () => {
 

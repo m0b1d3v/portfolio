@@ -1,4 +1,5 @@
 :2015 {
+	# Redirects to external sites
 	redir /discord https://discordapp.com/users/143888967253622784
 	redir /twitter https://twitter.com/hi_im_mobi
 	redir /vrchat https://vrchat.com/home/user/usr_9da6843d-5203-474b-be08-d723ade92e19
@@ -7,6 +8,11 @@
 		uri strip_prefix /git
 		redir https://github.com/mobiusk{uri}
 	}
+
+	# Redirects for moved pages
+	redir /code/research* /projects/code-research
+	redir /code/vrsvp* /projects/vrsvp
+	redir /vrchat/gallery* /projects/vrchat/gallery
 
 	root * ./public
 	file_server

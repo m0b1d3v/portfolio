@@ -21,7 +21,7 @@ test.describe(pageLink, () => {
 
 	test('has content', async ({ page }) => {
 
-		const expectedHeadings = ['Projects', 'Code', 'VRChat', 'Work', 'Links'];
+		const expectedHeadings = ['Projects', 'Work', 'Links'];
 
 		for (const heading of expectedHeadings) {
 			await expect(page.getByRole('heading', { name: heading })).toBeVisible();
