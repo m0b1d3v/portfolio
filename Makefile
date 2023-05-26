@@ -1,8 +1,15 @@
 all:
 	cat Makefile
 
+# Development
+
 start:
 	caddy run --config ./Caddyfile --watch
+
+images:
+	find public/images -type f \( -name "*.png" -o -name "*jpg" \) | parallel cwebp -q 100 -lossless -resize 640 0 -short "{}" -o "{}.webp"
+
+# E2E testing
 
 e2e-snapshots:
 	npx playwright test --update-snapshots --grep render
