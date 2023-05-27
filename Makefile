@@ -3,7 +3,7 @@ all:
 
 # Development
 
-start:
+run:
 	caddy run --config ./Caddyfile --watch
 
 images:

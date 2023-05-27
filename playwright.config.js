@@ -43,7 +43,7 @@ module.exports = defineConfig({
 
 	// Run your local dev server before starting the tests
 	webServer: {
-	  command: 'make start',
+	  command: 'make run',
 	  port: 2015,
 	},
 
