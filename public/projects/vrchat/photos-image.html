@@ -1,0 +1,13 @@
+<figure>
+	<div class="aspect-ratio-box">
+		<img
+			alt="{{index .Args 0}}"
+			src="/images/vrchat/gallery/{{index .Args 1}}"
+			width="640" height="360" loading="{{index .Args 2}}"
+		/>
+	</div>
+	<figcaption>
+		<a href="{{index .Args 3}}">{{index .Args 4}}</a>
+		- {{index .Args 5}}
+	</figcaption>
+</figure>
