@@ -29,14 +29,19 @@ e2e:
 # Transferring site to remote server
 
 transfer-check:
-	make transfer flags="n"
+	make transfer flags="--dry-run"
 
 transfer:
 	rsync \
-		-aivzO$(flags) \
+		--archive \
+		--chmod=D775,F664 \
+		--chown=:caddy \
+		--compress \
 		--delete \
 		--exclude 'images/**/*.jpg' \
 		--exclude 'images/**/*.png' \
-		--chmod=D775,F664 \
-		--chown=:caddy \
+		--itemize-changes \
+		--omit-dir-times \
+		--verbose \
+		$(flags) \
 		public/ projects:/srv/portfolio/public/
