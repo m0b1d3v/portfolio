@@ -7,7 +7,8 @@ run:
 	caddy run --config ./Caddyfile --watch
 
 images:
-	find public/images -type f \( -name "*.png" -o -name "*jpg" \) | parallel cwebp -q 100 -lossless -resize 640 0 -short "{}" -o "{}.webp"
+	find public/images -type f \( -name "*.png" -o -name "*jpg" \) ! -exec test -f "{}.webp" \; -print | \
+		parallel cwebp -q 100 -lossless -resize 640 0 -short "{}" -o "{}.webp"
 
 # E2E testing
 
