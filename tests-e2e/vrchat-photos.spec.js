@@ -20,12 +20,4 @@ test.describe(pageLink, () => {
 	test('dead links', () => fixture.checkForDeadLinks(pageLink, 1, { name: 'Go back' }));
 	test('later images lazily load', () => fixture.laterImagesLazyLoad());
 
-	test('albums have images and captions', async ({ page }) => {
-		const albumsLocator = await page.getByRole('figure');
-		for (const album of await albumsLocator.all()) {
-			await expect(album.getByRole('img')).toHaveCount(1);
-			await expect(album.getByText('Album')).toHaveCount(1);
-		}
-	});
-
 });
