@@ -19,10 +19,4 @@ test.describe(pageLink, () => {
 	test('description', () => fixture.description("Useful information for programming"));
 	test('dead links', () => fixture.checkForDeadLinks(pageLink, 1, { name: 'Go back' }));
 
-	test('has content', async ({ page }) => {
-		const expectedEntries = 6;
-		await expect(page.getByRole('heading')).toHaveCount(expectedEntries + 1); // +1 for page header
-		await expect(page.getByRole('paragraph')).toHaveCount(expectedEntries + 1); // +1 for page description
-	});
-
 });

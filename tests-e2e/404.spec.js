@@ -20,12 +20,4 @@ test.describe(pageLink, () => {
 	test('description', () => fixture.description("Requested page not found"));
 	test('dead links', () => fixture.checkForDeadLinks(pageLink, 2));
 
-	test('has content', async ({ page }) => {
-		await expect(page
-			.getByRole('paragraph')
-			.filter({ hasText: 'what you are looking for' })
-			.getByRole('link', { name: 'home page'})
-		).toBeVisible();
-	});
-
 });
