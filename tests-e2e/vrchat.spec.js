@@ -1,7 +1,7 @@
 const { test } = require('@playwright/test');
 const {Fixture} = require("./fixture");
 
-const pageLink = '/projects/vrchat/research';
+const pageLink = '/projects/vrchat';
 
 test.describe(pageLink, () => {
 
@@ -14,9 +14,9 @@ test.describe(pageLink, () => {
 
 	test('accessibility', () => fixture.accessibility());
 	test('renders', () => fixture.screenshot());
-	test('title', () => fixture.title("Mobi's VRChat Research"));
-	test('heading', () => fixture.heading("VRChat Research"));
-	test('description', () => fixture.description("Useful information for VRChat creation"));
+	test('title', () => fixture.title("Mobi's VRChat Projects"));
+	test('heading', () => fixture.heading("VRChat Projects"));
+	test('description', () => fixture.description("Exploring a Meta-verse"));
 	test('dead links', () => fixture.checkForDeadLinks(pageLink, 1, { name: 'Go back' }));
 
 });
