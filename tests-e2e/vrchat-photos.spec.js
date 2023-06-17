@@ -16,7 +16,7 @@ test.describe(pageLink, () => {
 	test('renders', async ({ page }) => await expect(page).toHaveScreenshot());
 	test('title', () => fixture.title("Mobi's VRChat Photos"));
 	test('heading', () => fixture.heading("Mobi's VRChat Photos"));
-	test('description', () => fixture.description("Albums I've taken of friends and myself"));
+	test('description', () => fixture.description("Photos of friends and myself"));
 	test('dead links', () => fixture.checkForDeadLinks(pageLink, 1, { name: 'Go back' }));
 	test('later images lazily load', () => fixture.laterImagesLazyLoad());
 
