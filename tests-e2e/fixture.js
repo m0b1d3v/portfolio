@@ -82,4 +82,27 @@ export class Fixture {
 		}
 	}
 
+	/**
+	 * Are only the first three images on a page set to eagerly load?
+	 *
+	 * All others should be set to lazy load, so the browser only uses bandwidth as they scroll near view.
+	 */
+	async laterImagesLazyLoad() {
+
+		const imagesLocator = await this.page.getByRole('img');
+		const images = await imagesLocator.all();
+
+		for (let imageCounter = 0; imageCounter < images.length; imageCounter++) {
+
+			const image = images[imageCounter];
+			const loading = await image.getAttribute('loading');
+
+			if (imageCounter < 3) {
+				await expect(loading).toBe('eager');
+			} else {
+				await expect(loading).toBe('lazy');
+			}
+		}
+	}
+
 }
