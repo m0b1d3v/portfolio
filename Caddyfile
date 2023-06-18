@@ -9,9 +9,16 @@
 	redir /twitter https://twitter.com/hi_im_mobi
 	redir /vrchat https://vrchat.com/home/user/usr_9da6843d-5203-474b-be08-d723ade92e19
 
+	# Redirects for Git projects
 	route /git* {
 		uri strip_prefix /git
 		redir https://github.com/mobiusk{uri}
+	}
+
+	# Redirects for Google Photo albums
+	route /redirect/photos/* {
+		uri strip_prefix /redirect/photos/
+		redir https://photos.app.goo.gl/{uri}
 	}
 
 	# Redirects for moved pages
