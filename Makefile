@@ -10,6 +10,9 @@ images:
 	find public/images -type f \( -name "*.png" -o -name "*jpg" \) ! -exec test -f "{}.webp" \; -print | \
 		parallel cwebp -q 100 -lossless -resize 640 0 -short "{}" -o "{}.webp"
 
+updates:
+	npm outdated
+
 # E2E testing
 
 e2e-snapshots:
