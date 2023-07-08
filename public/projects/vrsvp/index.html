@@ -14,7 +14,8 @@
 
 				<p>
 					This is a Discord bot I have created to help people sign up for events.
-					Server administrators can create RSVP signups, edit event descriptions, and set signup limits.
+					Server administrators or permitted individuals can create RSVP signups, edit event descriptions, and set signup limits.
+					Server members can then RSVP for certain times of the event.
 					Project work is outlined in the <a href="/projects/vrsvp/changelog">change log &rAarr;</a>.
 				</p>
 
@@ -43,8 +44,8 @@
 				<figure>
 					<img
 						alt="Command and generated RSVP form with six slots"
-						src="/images/vrsvp/vrsvp-example-creation.png.webp"
-						width="640" height="475"
+						src="/images/vrsvp/vrsvp-v1.3-example-creation.png.webp"
+						width="640" height="466"
 					>
 					<figcaption>
 						Command and generated RSVP form with six slots.
@@ -54,8 +55,8 @@
 				<figure>
 					<img
 						alt="Command and generated RSVP form with signup limits"
-						src="/images/vrsvp/vrsvp-example-creation-limits.png.webp"
-						width="640" height="450"
+						src="/images/vrsvp/vrsvp-v1.3-example-creation-limits.png.webp"
+						width="640" height="487"
 					>
 					<figcaption>
 						Command and generated RSVP form with signup limits.
@@ -65,8 +66,8 @@
 				<figure>
 					<img
 						alt="Signup example"
-						src="/images/vrsvp/vrsvp-example-signup.png.webp"
-						width="640" height="485"
+						src="/images/vrsvp/vrsvp-v1.3-example-signup.png.webp"
+						width="640" height="523"
 					>
 					<figcaption>
 						Signup example.
@@ -75,23 +76,23 @@
 
 				<figure>
 					<img
-						alt="Administrator edit actions for changing text or disabling RSVP button"
-						src="/images/vrsvp/vrsvp-example-edit-actions.png.webp"
-						width="640" height="255"
+						alt="Edit actions for changing text or disabling RSVP button"
+						src="/images/vrsvp/vrsvp-v1.3-example-edit-actions.png.webp"
+						width="640" height="260"
 					>
 					<figcaption>
-						Administrator edit actions for changing text or disabling RSVP button.
+						Edit actions for changing text or disabling RSVP button.
 					</figcaption>
 				</figure>
 
 				<figure>
 					<img
-						alt="Administrator text edit example"
-						src="/images/vrsvp/vrsvp-example-edit-description.png.webp"
-						width="640" height="329"
+						alt="Text edit example"
+						src="/images/vrsvp/vrsvp-v1.3-example-edit-description.png.webp"
+						width="640" height="327"
 					>
 					<figcaption>
-						Administrator text edit example.
+						Text edit example.
 					</figcaption>
 				</figure>
 
@@ -133,6 +134,56 @@
 
 			<hr>
 
+			<div id="permissions">
+
+				<h2>
+					<a href="#permissions">#</a>
+					Permissions
+				</h2>
+
+				<p>
+					By default only server administrators can create or edit events.
+					Other individuals can be granted these powers through the Discord Privilege system.
+					To access this go to Server Settings > Integrations > VRSVP > Manage > Commands > /vrsvp.
+				</p>
+
+				<figure>
+					<img
+						alt="Server settings integrations section pointing to VRSVP management link"
+						src="/images/vrsvp/vrsvp-v1.3-permissions-step-1.png.webp"
+						width="640" height="373"
+					>
+					<figcaption>
+						Create/edit permission granting, step 1.
+					</figcaption>
+				</figure>
+
+				<figure>
+					<img
+						alt="VRSVP integrations management page pointing to command link"
+						src="/images/vrsvp/vrsvp-v1.3-permissions-step-2.png.webp"
+						width="640" height="365"
+					>
+					<figcaption>
+						Create/edit permission granting, step 2.
+					</figcaption>
+				</figure>
+
+				<figure>
+					<img
+						alt="VRSVP integrations management permissions popup"
+						src="/images/vrsvp/vrsvp-v1.3-permissions-step-3.png.webp"
+						width="640" height="402"
+					>
+					<figcaption>
+						Create/edit permission granting, step 3.
+					</figcaption>
+				</figure>
+
+			</div>
+
+			<hr>
+
 			<div id="editing">
 
 				<h2>
@@ -141,7 +192,7 @@
 				</h2>
 
 				<p>
-					The event description can be edited from within Discord by a server administrator.
+					The event description can be edited from within Discord by administrators or through permission grants.
 					This allows correcting timestamps, giving more information, re-arranging individuals, and more.
 					It is helpful to be aware of <a href="https://support.discord.com/hc/en-us/articles/210298617-Markdown-Text-101-Chat-Formatting-Bold-Italic-Underline-">Discord text formatting</a>.
 				</p>
@@ -174,14 +225,14 @@
 				</h2>
 
 				<p>
-					Unfortunately we are limited by the platform in the following ways.
-					Most of the limitations can be avoided by splitting very large/long events into multiple VRSVP forms.
+					Don't forget to add the VRSVP bot to the channels you wish to use it in.
+					It needs to be treated the same as anyone added to said channels to RSVP in it.
 				</p>
 
-				<ul>
-					<li>Event description is limited to 4,000 characters</li>
-					<li>We cannot have more than 25 timestamp slots</li>
-				</ul>
+				<p>
+					Discord also limits us to event descriptions of up to 4,000 characters and 25 timestamp slots.
+					These limits can be avoided by splitting very large/long events into multiple VRSVP forms.
+				</p>
 
 			</div>
 
