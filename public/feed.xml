@@ -6,7 +6,15 @@
 		<link>https://mobiusk.com</link>
 		<description>Personal projects and interests</description>
 		<language>en</language>
-		<lastBuildDate>Sat, 08 Jul 2023</lastBuildDate>
+		<lastBuildDate>Fri, 14 Jul 2023</lastBuildDate>
+
+		<item>
+			<title>Code research additions</title>
+			<description>Adding some articles from HTMX and GitHub.</description>
+			<link>https://mobiusk.com/projects/code-research</link>
+			<guid isPermaLink="false">7cb17e3f-f01e-45fe-a93e-e0b5c59c3c40</guid>
+			<pubDate>Fri, 14 Jul 2023</pubDate>
+		</item>
 
 		<item>
 			<title>VRSVP v1.3 released</title>
