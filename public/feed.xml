@@ -6,7 +6,15 @@
 		<link>https://mobiusk.com</link>
 		<description>Personal projects and interests</description>
 		<language>en</language>
-		<lastBuildDate>Fri, 14 Jul 2023</lastBuildDate>
+		<lastBuildDate>Tue, 18 Jul 2023</lastBuildDate>
+
+		<item>
+			<title>VRSVP v1.4 released</title>
+			<description>Events are now limited to 2,000 characters.</description>
+			<link>https://mobiusk.com/projects/vrsvp</link>
+			<guid isPermaLink="false">4924f6fc-7719-4fd7-b2d7-38ca234bfe43</guid>
+			<pubDate>Tue, 18 Jul 2023</pubDate>
+		</item>
 
 		<item>
 			<title>Code research additions</title>
