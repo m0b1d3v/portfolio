@@ -6,7 +6,15 @@
 		<link>https://mobiusk.com</link>
 		<description>Personal projects and interests</description>
 		<language>en</language>
-		<lastBuildDate>Tue, 18 Jul 2023</lastBuildDate>
+		<lastBuildDate>Wed, 19 Jul 2023</lastBuildDate>
+
+		<item>
+			<title>VRChat VPM repos</title>
+			<description>Community VPM repos listed for addition to VCC.</description>
+			<link>https://mobiusk.com/projects/vrchat/research#vpm-repos</link>
+			<guid isPermaLink="false">2216b8e2-4397-412a-8baf-e7012a7fed0b</guid>
+			<pubDate>Wed, 19 Jul 2023</pubDate>
+		</item>
 
 		<item>
 			<title>VRSVP v1.4 released</title>
