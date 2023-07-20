@@ -7,7 +7,7 @@ run:
 	caddy run --config ./Caddyfile --watch
 
 images:
-	find public/images -type f \( -name "*.png" -o -name "*jpg" \) ! -exec test -f "{}.webp" \; -print | \
+	find src/main/webapp/images -type f \( -name "*.png" -o -name "*jpg" \) ! -exec test -f "{}.webp" \; -print | \
 		parallel cwebp -q 100 -lossless -resize 640 0 -short "{}" -o "{}.webp"
 
 updates:
@@ -48,4 +48,4 @@ transfer:
 		--omit-dir-times \
 		--verbose \
 		$(flags) \
-		public/ projects:/srv/portfolio/public/
+		src/main/webapp/ projects:/srv/portfolio/public/

@@ -27,7 +27,7 @@
 	redir /vrchat/gallery* /projects/vrchat/gallery
 
 	# File serving
-	root * ./public
+	root * ./src/main/webapp
 	try_files {path} {path}.html {path}/index.html
 	import static
 

@@ -14,7 +14,7 @@ __debug_bin
 node_modules
 
 # Build system
-public/images/**/*.webp
+src/main/webapp/images/**/*.webp
 .gradle
 build
 
