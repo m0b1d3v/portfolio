@@ -10,13 +10,7 @@ __debug_bin
 .vscode
 .history
 
-# Dependencies
-node_modules
-
 # Build system
-public/images/**/*.webp
-
-# Test system(s)
-tests-e2e/*-snapshots/
-tests-e2e/results/
-playwright/.cache/
+src/main/webapp/images/**/*.webp
+.gradle
+build

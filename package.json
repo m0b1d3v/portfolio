@@ -1,6 +1,0 @@
-{
-	"devDependencies": {
-		"@axe-core/playwright": "^4.6.0",
-		"@playwright/test": "^1.31.2"
-	}
-}
