@@ -10,6 +10,7 @@ import org.junit.jupiter.params.provider.EnumSource;
 import java.nio.file.Paths;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -77,6 +78,26 @@ class E2ETests extends TestBase {
 		navigate(pageEnum);
 
 		assertEquals(pageEnum.getTitle(), page.title());
+	}
+
+	@ParameterizedTest
+	@EnumSource(PageEnum.class)
+	void goBackLinkWorksIfPresent(PageEnum pageEnum) {
+
+		navigate(pageEnum);
+
+		var getByRoleOptions = new Page.GetByRoleOptions();
+		getByRoleOptions.setName("Go Back");
+		var goBackLink = page.getByRole(AriaRole.LINK, getByRoleOptions);
+
+		if (goBackLink != null && goBackLink.count() != 0) {
+
+			assertEquals(1, goBackLink.count());
+
+			goBackLink.click();
+
+			assertNotEquals(PageEnum.ERROR_404.getTitle(), page.title());
+		}
 	}
 
 	// Test utility method(s)
