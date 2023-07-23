@@ -100,6 +100,32 @@ class E2ETests extends TestBase {
 		}
 	}
 
+	@ParameterizedTest
+	@EnumSource(value = PageEnum.class, names = {
+		"PROJECTS_VRCHAT_ARCADE",
+		"PROJECTS_VRCHAT_PHOTOS",
+	})
+	void laterImagesLazilyLoad(PageEnum pageEnum) {
+
+		navigate(pageEnum);
+
+		var images = page.getByRole(AriaRole.IMG).all();
+
+		assertTrue(images.size() > 0);
+
+		for (var counter = 0; counter < images.size(); counter++) {
+
+			var image = images.get(counter);
+			var loading = image.getAttribute("loading");
+
+			if (counter < 3) {
+				assertEquals("eager", loading);
+			} else {
+				assertEquals("lazy", loading);
+			}
+		}
+	}
+
 	// Test utility method(s)
 
 	private void navigate(PageEnum pageEnum) {
