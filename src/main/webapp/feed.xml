@@ -6,7 +6,15 @@
 		<link>https://mobiusk.com</link>
 		<description>Personal projects and interests</description>
 		<language>en</language>
-		<lastBuildDate>Wed, 19 Jul 2023</lastBuildDate>
+		<lastBuildDate>Wed, 02 Aug 2023</lastBuildDate>
+
+		<item>
+			<title>VRChat VPM repo additions</title>
+			<description>CyanTrigger and Poiyomi VPM links added.</description>
+			<link>https://mobiusk.com/projects/vrchat/research#vpm-repos</link>
+			<guid isPermaLink="false">89fd1174-4347-4327-a392-9dab57234585</guid>
+			<pubDate>Wed, 02 Aug 2023</pubDate>
+		</item>
 
 		<item>
 			<title>VRChat VPM repos</title>
