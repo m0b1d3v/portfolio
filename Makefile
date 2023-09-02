@@ -4,6 +4,12 @@ all:
 buildToolUpdate:
 	./gradlew wrapper --gradle-version latest
 
+checkDependencies:
+	./gradlew dependencyUpdates
+
+checkVulnerabilities:
+	./gradlew dependencyCheckAnalyze
+
 run:
 	caddy run --config ./Caddyfile --watch
 
@@ -13,9 +19,6 @@ images:
 
 test:
 	./gradlew test
-
-owasp:
-	./gradlew dependencyCheckAnalyze
 
 updates:
 	./gradlew dependencyUpdates
