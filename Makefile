@@ -1,6 +1,9 @@
 all:
 	cat Makefile
 
+buildToolUpdate:
+	./gradlew wrapper --gradle-version latest
+
 run:
 	caddy run --config ./Caddyfile --watch
 
