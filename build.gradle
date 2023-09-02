@@ -5,8 +5,8 @@ plugins {
 	id 'java'
 
 	id 'com.github.ben-manes.versions' version '0.47.0'
-	id 'io.freefair.lombok' version '8.1.0'
-	id 'org.owasp.dependencycheck' version '8.3.1'
+	id 'io.freefair.lombok' version '8.3'
+	id 'org.owasp.dependencycheck' version '8.4.0'
 }
 
 repositories {
@@ -24,7 +24,7 @@ java {
 
 dependencies {
 	testImplementation 'com.deque.html.axe-core:playwright:4.7.0'
-	testImplementation 'com.microsoft.playwright:playwright:1.36.0'
+	testImplementation 'com.microsoft.playwright:playwright:1.37.0'
 	testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
 }
 
