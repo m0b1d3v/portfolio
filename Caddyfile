@@ -5,6 +5,7 @@
 
 :2015 {
 	# Redirects to external sites
+	redir /bluesky https://bsky.app/profile/m0b1.dev
 	redir /discord https://discordapp.com/users/143888967253622784
 	redir /twitter https://twitter.com/hi_im_mobi
 	redir /vrchat https://vrchat.com/home/user/usr_9da6843d-5203-474b-be08-d723ade92e19
