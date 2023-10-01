@@ -12,7 +12,7 @@
 	# Redirects for Git projects
 	route /git* {
 		uri strip_prefix /git
-		redir https://github.com/mobiusk{uri}
+		redir https://github.com/m0b1d3v{uri}
 	}
 
 	# File serving
