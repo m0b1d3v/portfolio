@@ -15,17 +15,6 @@
 		redir https://github.com/mobiusk{uri}
 	}
 
-	# Redirects for Google Photo albums
-	route /redirect/photos/* {
-		uri strip_prefix /redirect/photos/
-		redir https://photos.app.goo.gl/{uri}
-	}
-
-	# Redirects for moved pages
-	redir /code/research* /projects/code-research
-	redir /code/vrsvp* /projects/vrsvp
-	redir /vrchat/gallery* /projects/vrchat/gallery
-
 	# File serving
 	root * ./src/main/webapp
 	try_files {path} {path}.html {path}/index.html
