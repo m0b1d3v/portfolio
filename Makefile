@@ -4,7 +4,7 @@ all:
 buildToolUpdate:
 	./gradlew wrapper --gradle-version latest
 
-checkDependencies:
+checkUpdates:
 	./gradlew dependencyUpdates
 
 checkVulnerabilities:
@@ -19,9 +19,6 @@ images:
 
 test:
 	./gradlew test
-
-updates:
-	./gradlew dependencyUpdates
 
 transfer-check:
 	make transfer flags="--dry-run"
