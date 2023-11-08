@@ -16,8 +16,8 @@ public enum PageEnum {
 
 	HOME(
 		"/",
-		"Hi, I'm Mobi",
-		"Hi, I'm Mobi",
+		"Hi, I'm m0b1",
+		"Hi, I'm m0b1",
 		"Personal projects and interests"
 	),
 
