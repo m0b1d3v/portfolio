@@ -16,65 +16,23 @@ public enum PageEnum {
 
 	HOME(
 		"/",
-		"Hi, I'm m0b1",
-		"Hi, I'm m0b1",
-		"Personal projects and interests"
+		"Hi, I'm m0b1.",
+		"Hi, I'm m0b1.",
+		"Some code, a lot of virtual reality."
 	),
 
-	PROJECTS_CODE_RESEARCH(
-		"/projects/code-research",
-		"M0b1's Code Research",
-		"Code Research",
-		"Useful information for programming"
+	RESEARCH(
+		"/research",
+		"M0b1's Research",
+		"Research",
+		"Useful collected information"
 	),
 
-	PROJECTS_VRCHAT(
-		"/projects/vrchat",
-		"M0b1's VRChat Projects",
-		"VRChat Projects",
-		"Exploring a Meta-verse"
-	),
-
-	PROJECTS_VRCHAT_ARCADE(
-		"/projects/vrchat/arcade",
-		"The Arcade",
-		"The Arcade",
-		"One of my first social clubs in VRChat"
-	),
-
-	PROJECTS_VRCHAT_ARCADE_CHANGELOG(
-		"/projects/vrchat/arcade/changelog",
-		"The Arcade Change Log",
-		"The Arcade Change Log",
-		"Small history of map work"
-	),
-
-	PROJECTS_VRCHAT_PHOTOS(
-		"/projects/vrchat/photos",
-		"M0b1's VRChat Photos",
-		"VRChat Photos",
-		"Photos of friends and myself"
-	),
-
-	PROJECTS_VRCHAT_RESEARCH(
-		"/projects/vrchat/research",
-		"M0b1's VRChat Research",
-		"VRChat Research",
-		"Useful information for VRChat creation"
-	),
-
-	PROJECTS_VRSVP(
-		"/projects/vrsvp",
-		"VRSVP",
-		"VRSVP",
-		"Discord schedule sign-up bot"
-	),
-
-	PROJECTS_VRSVP_CHANGELOG(
-		"/projects/vrsvp/changelog",
-		"VRSVP Change Log",
-		"VRSVP Change Log",
-		"History of Discord bot work"
+	PHOTOS(
+		"/photos",
+		"M0b1's Photos",
+		"Photos",
+		"Exploring another reality"
 	);
 
 	private final String link;

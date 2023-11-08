@@ -4,6 +4,7 @@ import com.deque.html.axecore.playwright.AxeBuilder;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
 import com.microsoft.playwright.options.ScreenshotScale;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 
@@ -100,14 +101,10 @@ class E2ETests extends TestBase {
 		}
 	}
 
-	@ParameterizedTest
-	@EnumSource(value = PageEnum.class, names = {
-		"PROJECTS_VRCHAT_ARCADE",
-		"PROJECTS_VRCHAT_PHOTOS",
-	})
-	void laterImagesLazilyLoad(PageEnum pageEnum) {
+	@Test
+	void laterImagesLazilyLoad() {
 
-		navigate(pageEnum);
+		navigate(PageEnum.PHOTOS);
 
 		var images = page.getByRole(AriaRole.IMG).all();
 
