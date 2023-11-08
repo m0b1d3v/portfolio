@@ -16,6 +16,12 @@
 		redir https://github.com/m0b1d3v{uri}
 	}
 
+	# Redirects for Adobe Lightroom albums
+	route /redirect/photos/* {
+		uri strip_prefix /redirect/photos/
+		redir https://adobe.ly/{uri}
+	}
+
 	# File serving
 	root * ./src/main/webapp
 	try_files {path} {path}.html {path}/index.html
