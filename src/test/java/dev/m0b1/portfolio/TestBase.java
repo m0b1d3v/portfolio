@@ -1,4 +1,4 @@
-package com.mobiusk.portfolio;
+package dev.m0b1.portfolio;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;

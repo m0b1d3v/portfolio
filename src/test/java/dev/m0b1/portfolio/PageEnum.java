@@ -1,4 +1,4 @@
-package com.mobiusk.portfolio;
+package dev.m0b1.portfolio;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -9,7 +9,7 @@ public enum PageEnum {
 
 	ERROR_404(
 		"/404",
-		"Mobi's Lost and Found",
+		"M0b1's Lost and Found",
 		"What you are looking for is not here",
 		"Requested page not found"
 	),
@@ -23,14 +23,14 @@ public enum PageEnum {
 
 	PROJECTS_CODE_RESEARCH(
 		"/projects/code-research",
-		"Mobi's Code Research",
+		"M0b1's Code Research",
 		"Code Research",
 		"Useful information for programming"
 	),
 
 	PROJECTS_VRCHAT(
 		"/projects/vrchat",
-		"Mobi's VRChat Projects",
+		"M0b1's VRChat Projects",
 		"VRChat Projects",
 		"Exploring a Meta-verse"
 	),
@@ -51,14 +51,14 @@ public enum PageEnum {
 
 	PROJECTS_VRCHAT_PHOTOS(
 		"/projects/vrchat/photos",
-		"Mobi's VRChat Photos",
+		"M0b1's VRChat Photos",
 		"VRChat Photos",
 		"Photos of friends and myself"
 	),
 
 	PROJECTS_VRCHAT_RESEARCH(
 		"/projects/vrchat/research",
-		"Mobi's VRChat Research",
+		"M0b1's VRChat Research",
 		"VRChat Research",
 		"Useful information for VRChat creation"
 	),
