@@ -1,0 +1,15 @@
+<a href="/photos/{{index .Args 1}}">
+	<figure id="{{index .Args 1}}">
+		<div class="aspect-ratio-box">
+			<img
+				src="https://cdn.m0b1.dev/{{index .Args 3}}"
+				loading="{{index .Args 0}}"
+				width="640"
+				height="360"
+			/>
+		</div>
+		<figcaption>
+			{{index .Args 2}}
+		</figcaption>
+	</figure>
+</a>
