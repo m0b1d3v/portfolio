@@ -1,15 +1,17 @@
-<a href="/photos/{{index .Args 1}}">
-	<figure id="{{index .Args 1}}">
-		<div class="aspect-ratio-box">
-			<img
-				src="https://cdn.m0b1.dev/{{index .Args 3}}?class=thumbnail"
-				loading="lazy"
-				width="640"
-				height="360"
-			/>
-		</div>
+{{ $path := (index .Args 0) }}
+{{ $title := (index .Args 1) }}
+{{ $image := (index .Args 2) }}
+
+<a href="/photos/{{$path}}">
+	<figure id="{{$path}}">
+		<img
+			src="https://cdn.m0b1.dev/{{$image}}?class=thumbnail"
+			loading="lazy"
+			width="640"
+			height="360"
+		/>
 		<figcaption>
-			{{index .Args 2}}
+			{{$title}} &rArr;
 		</figcaption>
 	</figure>
 </a>

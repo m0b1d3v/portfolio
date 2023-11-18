@@ -116,49 +116,16 @@ a:hover {
 }
 
 /*
-Figure images should always be 16:9 ratio regardless of screen size
-This code was adapted from https://css-tricks.com/aspect-ratio-boxes/
+General sizing of figures and contents, including margin reset as some browsers add one by default
 */
 
 figure {
-	/* Some browsers add margins to figure elements by default which is undesirable */
 	margin: var(--content-padding) 0;
 }
 
 figure img {
 	max-width: 100%;
 	height: auto;
-}
-
-figure .aspect-ratio-box {
-	height: 0;
-	padding-top: calc((9 / 16) * 100%);
-	position: relative;
-}
-
-figure .aspect-ratio-box.square {
-	padding-top: 100%;
-}
-
-figure .aspect-ratio-box img {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-
-/*
-Figure images alt text should have breathing room and (on some browsers) be vertically centered
-*/
-
-figure img, figure .aspect-ratio-box img {
-	display: flex;
-	align-items: center;
-}
-
-figure .aspect-ratio-box img::before {
-	padding: var(--content-padding);
 }
 
 /*
@@ -170,15 +137,11 @@ figcaption {
 }
 
 /*
-Figure images and captions should differentiate themselves from the background each other
+Figure images and captions should differentiate themselves from the background and each other
 */
 
-figure .aspect-ratio-box img {
+figure img {
 	background-color: var(--color-background-lighter);
-}
-
-figure .aspect-ratio-box.square img {
-	background-color: transparent;
 }
 
 figcaption {
@@ -189,7 +152,7 @@ figcaption {
 Figure images and captions should be rounded to ease transitions
 */
 
-figure img, figure .aspect-ratio-box img {
+figure img {
 	border-top-left-radius: var(--border-radius);
 	border-top-right-radius: var(--border-radius);
 }
