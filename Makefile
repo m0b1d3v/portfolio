@@ -1,39 +1,24 @@
 all:
 	cat Makefile
 
-buildToolUpdate:
-	./gradlew wrapper --gradle-version latest
+clean:
+	npm run clean
 
-checkUpdates:
-	./gradlew dependencyUpdates
+build:
+	npm run build
 
-checkVulnerabilities:
-	./gradlew dependencyCheckAnalyze
+check:
+	make deploy flags="--dry-run"
 
-run:
-	caddy run --config ./Caddyfile --watch
-
-images:
-	find src/main/webapp/images -type f \( -name "*.png" -o -name "*jpg" \) ! -exec test -f "{}.webp" \; -print | \
-		parallel cwebp -q 100 -lossless -resize 640 0 -short "{}" -o "{}.webp"
-
-test:
-	./gradlew test
-
-transfer-check:
-	make transfer flags="--dry-run"
-
-transfer:
+deploy:
 	rsync \
 		--archive \
 		--chmod=D775,F664 \
 		--chown=:caddy \
 		--compress \
 		--delete \
-		--exclude 'images/**/*.jpg' \
-		--exclude 'images/**/*.png' \
 		--itemize-changes \
 		--omit-dir-times \
 		--verbose \
 		$(flags) \
-		src/main/webapp/ projects:/srv/portfolio/public/
+		_site/ projects:/srv/portfolio/public/
