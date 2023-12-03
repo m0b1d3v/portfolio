@@ -1,0 +1,24 @@
+{
+	"name": "portfolio",
+	"version": "1.0.0",
+	"description": "Personal projects and interests.",
+	"scripts": {
+		"build": "npx @11ty/eleventy",
+		"clean": "rimraf _site",
+		"start": "npx @11ty/eleventy --serve --incremental",
+		"test": "playwright test"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://m0b1.dev/git/portfolio"
+	},
+	"author": "m0b1",
+	"license": "ISC",
+	"devDependencies": {
+		"@11ty/eleventy": "^2.0.1",
+		"@axe-core/playwright": "^4.8.1",
+		"@playwright/test": "^1.40.1",
+		"@types/node": "^20.10.2",
+		"playwright": "^1.40.1"
+	}
+}
