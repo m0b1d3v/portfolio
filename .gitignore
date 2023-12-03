@@ -1,5 +1,6 @@
 # IDEs and editors
 .idea
+*.iml
 .project
 .classpath
 .c9/
@@ -11,6 +12,9 @@ __debug_bin
 .history
 
 # Build system
-src/main/webapp/images/**/*.webp
-.gradle
-build
+_site
+node_modules
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
