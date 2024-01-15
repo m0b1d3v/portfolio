@@ -67,10 +67,6 @@ h6, a, p, li {
 	font-size: 1.5rem;
 }
 
-figcaption, figcaption a {
-	font-size: 1.2rem;
-}
-
 /*
 Content container
 */
@@ -116,54 +112,6 @@ a:hover {
 }
 
 /*
-General sizing of figures and contents, including margin reset as some browsers add one by default
-*/
-
-figure {
-	margin: var(--content-padding) 0;
-}
-
-figure img {
-	display: block;
-	height: auto;
-	max-width: 100%;
-}
-
-/*
-Figure captions should have a little bit of breathing room
-*/
-
-figcaption {
-	padding: calc(var(--content-padding) / 2) var(--content-padding);
-}
-
-/*
-Figure images and captions should differentiate themselves from the background and each other
-*/
-
-figure img {
-	background-color: var(--color-background-lighter);
-}
-
-figcaption {
-	background-color: var(--color-background-darker);
-}
-
-/*
-Figure images and captions should be rounded to ease transitions
-*/
-
-figure img {
-	border-top-left-radius: var(--border-radius);
-	border-top-right-radius: var(--border-radius);
-}
-
-figure.no-caption img, figcaption {
-	border-bottom-left-radius: var(--border-radius);
-	border-bottom-right-radius: var(--border-radius);
-}
-
-/*
 De-emphasizing content
 */
 
@@ -174,12 +122,4 @@ a, body {
 small {
 	color: #aaaaaa;
 	display: block;
-}
-
-/*
-Positioning
-*/
-
-.margin-right {
-	margin-right: 5px;
 }
