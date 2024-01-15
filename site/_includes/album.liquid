@@ -1,14 +1,6 @@
-<a href="/photos/{{ path }}">
-	<figure id="{{ path }}">
-		<img
-			alt="{{ title }}"
-			src="https://cdn.m0b1.dev/{{ image }}?class=thumbnail"
-			loading="{{ loading | default: 'lazy' }}"
-			width="640"
-			height="360"
-		/>
-		<figcaption>
-			{{ title }} &rArr;
-		</figcaption>
-	</figure>
-</a>
+<li>
+	{{ date }}
+	<a href="https://photos.app.goo.gl/{{ albumId }}">
+		{{ title }}
+	</a>
+</li>
