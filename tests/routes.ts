@@ -5,24 +5,24 @@ export const routes: Record<string, Route> = {
 		description: "This page cannot be found.",
 		heading: "What you are looking for is not here",
 		link: "/404",
-		title: "M0b1's lost and found",
+		title: "m0b1.dev/404",
 	},
 	home: {
 		description: "I write code and enjoy virtual reality.",
 		heading: "Hi, I'm m0b1!",
 		link: "/",
-		title: "Hi, I'm m0b1!",
+		title: "m0b1.dev",
 	},
 	photos: {
 		description: "Exploring another reality.",
 		heading: "Photos",
 		link: "/photos",
-		title: "M0b1's photos",
+		title: "m0b1.dev/photos",
 	},
 	research: {
 		description: "Useful collected information.",
 		heading: "Research",
 		link: "/research",
-		title: "M0b1's research",
+		title: "m0b1.dev/research",
 	},
 };
