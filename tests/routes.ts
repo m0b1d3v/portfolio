@@ -9,7 +9,7 @@ export const routes: Record<string, Route> = {
 	},
 	home: {
 		description: "I write code and enjoy virtual reality.",
-		heading: "Hi, I'm m0b1!",
+		heading: "m0b1.dev",
 		link: "/",
 		title: "m0b1.dev",
 	},
