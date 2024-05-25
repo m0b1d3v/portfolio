@@ -1,8 +1,0 @@
-*
-!site
-!tests
-!.eleventy.js
-!Caddyfile
-!package.json
-!package-lock.json
-!playwright.config.ts
