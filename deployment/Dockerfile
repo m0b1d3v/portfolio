@@ -9,7 +9,7 @@ RUN npm run build
 
 # Stage 1
 # Development spot-checking
-FROM base as development
+FROM base AS development
 
 EXPOSE 8080
 CMD npm start
@@ -17,14 +17,14 @@ CMD npm start
 # Stage 2
 # Playwright testing
 # https://playwright.dev/docs/docker#pull-the-image
-FROM mcr.microsoft.com/playwright:v1.43.1-jammy as testing
+FROM mcr.microsoft.com/playwright:v1.43.1-jammy AS testing
 
 COPY --from=base /app ./
 CMD npm test
 
 # Stage 3
 # Production run
-FROM caddy:2.7.6-alpine as production
+FROM caddy:2.7.6-alpine AS production
 
 VOLUME /data
 ENV XDG_CONFIG_HOME /data/config
