@@ -6,6 +6,7 @@
 		"build": "npx @11ty/eleventy",
 		"clean": "rimraf _site",
 		"start": "npx @11ty/eleventy --serve --incremental",
+		"testSetup": "npx playwright install",
 		"test": "playwright test"
 	},
 	"repository": {
