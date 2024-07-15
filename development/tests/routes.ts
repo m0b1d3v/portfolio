@@ -19,10 +19,4 @@ export const routes: Record<string, Route> = {
 		link: "/photos",
 		title: "m0b1.dev/photos",
 	},
-	research: {
-		description: "Useful collected information.",
-		heading: "Research",
-		link: "/research",
-		title: "m0b1.dev/research",
-	},
 };
