@@ -18,6 +18,3 @@ node_modules
 /playwright-report/
 /blob-report/
 /playwright/.cache/
-
-# Photo upload script
-token.txt
