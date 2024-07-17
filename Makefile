@@ -1,5 +1,12 @@
+read = cat --number
+
+ifeq ($(OS),Windows_NT)
+	# Overwrite default Linux tasks for Windows users
+	read = type
+endif
+
 all:
-	cat Makefile
+	$(read) Makefile
 
 deploy:
 	fly deploy \
