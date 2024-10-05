@@ -1,12 +1,3 @@
 # IDEs and editors
 .idea
 *.iml
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-__debug_bin
-.vscode
-.history
