@@ -9,7 +9,7 @@ If you would like to get in touch, I can be reached at [mail@m0b1.dev](mailto:ma
 | Description                                                      | From |   Until |
 |------------------------------------------------------------------|-----:|--------:|
 | [VRSVP](https://github.com/m0b1d3v/vrsvp), a Discord RSVP system | 2023 | Present |
-| [Virtual event photography](./virtual-photography.md)            | 2023 |    2024 |
+| [Virtual event photography](README-virtual-photography.md)       | 2023 |    2024 |
 | Freight transport APIs                                           | 2021 | Present |
 | Network threat models                                            | 2019 |    2022 |
 | GPS survey systems                                               | 2017 |    2019 |
