@@ -20,8 +20,3 @@ insert_final_newline = true
 # Whether whitespace should be trimmed
 # Possible values: true, false
 trim_trailing_whitespace = true
-
-# Specific settings just for YAML files
-[*{.toml,.yml,.yaml}]
-indent_style = space
-indent_size = 2
