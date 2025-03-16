@@ -1,6 +1,5 @@
 # m0b1.dev
 
-Hi there, I'm m0b1.
 I am a programmer focusing on elegant, simple, and minimal solutions to problems.
 If you would like to get in touch, I can be reached at [mail@m0b1.dev](mailto:mail@m0b1.dev).
 
