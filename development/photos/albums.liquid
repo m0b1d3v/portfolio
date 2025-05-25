@@ -21,10 +21,17 @@ permalink: "photos/"
 <hr>
 
 {%- for album in photos.albums -%}
+
+	{% for photo in album.photos %}
+		{% if forloop.first == true or photo[1][0] == '^' %}
+			{% assign thumbnail = photo[0] %}
+		{% endif %}
+	{% endfor %}
+
 	{% render "image",
 		index: forloop.index,
 		folder: album.title,
-		file: album.thumbnail,
+		file: thumbnail,
 		path: album.title
 	%}
 

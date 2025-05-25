@@ -15,8 +15,14 @@ That is why <head> is split into its own include here.
 <!DOCTYPE html>
 <html lang="en">
 
+	{%- for photo in album.photos -%}
+		{%- if forloop.first == true or photo[1][0] == '^' -%}
+			{%- assign thumbnail = photo[0] -%}
+		{%- endif -%}
+	{%- endfor -%}
+
 	{%- assign folder = album.title | slugify %}
-	{%- assign thumbnail = "https://cdn.m0b1.dev/vrc/" | concat: folder | concat: '/' | concat: album.thumbnail -%}
+	{%- assign thumbnail = "https://cdn.m0b1.dev/vrc/" | concat: folder | concat: '/' | concat: thumbnail -%}
 	{% render "head", title: page.url, ogTitle: album.title, thumbnail: thumbnail %}
 
 	<body>
