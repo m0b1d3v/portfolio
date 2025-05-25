@@ -1,0 +1,34 @@
+---
+description: Virtual reality photography
+layout: layout.html
+title: m0b1.dev/photos
+pagination:
+  alias: album
+  data: photos.albums
+  size: 1
+permalink: "photos/{{ album.title | slugify }}/"
+---
+
+<h1>
+	<a href="/photos" title="Return">&lArr;</a>
+	Album
+</h1>
+
+<hr>
+
+<h2>
+	{{ album.title }}
+</h2>
+
+{% for photo in album.photos %}
+
+	{%- assign altText = album.title | concat: ': ' | concat: photo[0] -%}
+
+	{% render "image",
+		index: forloop.index,
+		folder: album.title,
+		file: photo[0],
+		altText: altText
+	%}
+
+{% endfor %}

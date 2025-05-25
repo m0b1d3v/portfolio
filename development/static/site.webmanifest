@@ -1,0 +1,14 @@
+{
+    "name": "m0b1.dev",
+    "short_name": "m0b1",
+    "theme_color": "#634677",
+    "background_color": "#242424",
+    "display": "standalone",
+    "icons": [
+       {
+        "src": "/favicon.png",
+        "sizes": "16x16",
+        "type": "image/png"
+        }
+    ]
+ }

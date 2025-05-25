@@ -1,0 +1,58 @@
+---
+description: Virtual reality photography
+layout: layout.html
+title: m0b1.dev/photos/
+pagination:
+  alias: tag
+  data: photos.tags
+  size: 1
+permalink: "photos/{{ tag.title | slugify }}/"
+---
+
+<h1>
+	<a href="/photos/tags" title="Return">&lArr;</a>
+	{{ tag.title }}
+</h1>
+
+{%- assign tagSlug = tag.title | slugify -%}
+{%- assign displayedImages = 0 -%}
+
+{%- for album in photos.albums -%}
+
+	{%- assign applicablePhotos = '' | split: '' -%}
+	{%- for photo in album.photos -%}
+		{%- assign tags = photo[1] | split: ', ' -%}
+		{%- if tags contains tagSlug -%}
+			{%- assign applicablePhotos = applicablePhotos | push: photo -%}
+		{%- endif -%}
+	{%- endfor -%}
+
+	{% if applicablePhotos.size > 0 %}
+
+		<hr>
+
+		<div id="{{ album.title | slugify }}">
+
+			<h2>
+				{{ album.title }}
+			</h2>
+
+			{% for photo in applicablePhotos %}
+
+				{%- assign altText = album.title | concat: ': ' | concat: photo[0] -%}
+
+				{% render "image",
+					index: displayedImages,
+					folder: album.title,
+					file: photo[0],
+					altText: altText
+				%}
+
+				{%- assign displayedImages = displayedImages | plus: 1 -%}
+
+			{% endfor %}
+		</div>
+
+	{% endif %}
+
+{%- endfor -%}

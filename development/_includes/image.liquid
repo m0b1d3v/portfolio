@@ -1,0 +1,38 @@
+{%- assign loading = 'lazy' -%}
+{%- if index < 3 -%}
+	{%- assign loading = 'eager' -%}
+{%- endif -%}
+
+{%- assign folderSlug = folder | slugify -%}
+{%- assign image = "https://cdn.m0b1.dev/vrc/" | concat: folderSlug | concat: '/' | concat: file -%}
+
+{%- if path -%}
+
+	<a href="/photos/{{ path | slugify }}">
+		<figure>
+			<img
+				alt="{{ path }}"
+				src="{{ image }}?class=thumbnail"
+				loading="{{ loading }}"
+				width="640"
+			/>
+			<figcaption>
+				{{ path }} &rArr;
+			</figcaption>
+		</figure>
+	</a>
+
+{% else %}
+
+	<a href="{{ image }}?class=source">
+		<figure class="no-caption">
+			<img
+				alt="{{ altText }}"
+				src="{{ image }}?class=thumbnail"
+				loading="{{ loading }}"
+				width="640"
+			>
+		</figure>
+	</a>
+
+{% endif %}

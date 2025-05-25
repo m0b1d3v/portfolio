@@ -1,0 +1,31 @@
+---
+description: Virtual reality photography
+layout: layout.html
+title: m0b1.dev/photos/tags
+---
+
+<div>
+
+	<h1>
+		<a href="/photos" title="Return">&lArr;</a>
+		Photos by Tag
+	</h1>
+
+	<p>
+		Thanks to everyone that make these possible.
+		<br>
+		<a href="/photos">Photos by Album &rArr;</a>
+	</p>
+
+</div>
+
+<hr>
+
+{% for tag in photos.tags %}
+	{% render "image",
+		index: forloop.index,
+		folder: tag.album,
+		file: tag.thumbnail,
+		path: tag.title
+	%}
+{% endfor %}

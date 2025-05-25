@@ -1,0 +1,29 @@
+{
+	"name": "portfolio",
+	"version": "3.0.0",
+	"description": "Personal projects and interests.",
+	"scripts": {
+		"build": "npx @11ty/eleventy",
+		"clean": "rimraf _site",
+		"dependencyInstall": "npm install",
+		"dependencyUpdateCheck": "npm outdated",
+		"dependencyUpdate": "npm update",
+		"start": "npx @11ty/eleventy --serve --incremental --quiet",
+		"testSetup": "npx playwright install",
+		"test": "playwright test"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://m0b1.dev/git/portfolio"
+	},
+	"author": "m0b1",
+	"license": "ISC",
+	"devDependencies": {
+		"@11ty/eleventy": "^3.0.0",
+		"@axe-core/playwright": "^4.10.1",
+		"@playwright/test": "^1.52.0",
+		"@types/node": "^22.15.17",
+		"js-yaml": "^4.1.0",
+		"playwright": "^1.52.0"
+	}
+}
