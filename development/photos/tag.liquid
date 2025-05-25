@@ -55,6 +55,7 @@ That is why <head> is split into its own include here.
 					<div id="{{ album.title | slugify }}">
 
 						<h2>
+							<a href="#{{ album.title | slugify }}" title="Page anchor">#</a>
 							{{ album.title }}
 						</h2>
 
