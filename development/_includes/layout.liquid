@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	{% comment %}
+	This layout should be used in all pages EXCEPT album and tag pagination output.
+	Those have their own layout to facilitate OpenGraph meta tags.
+	That is why <head> is split into its own include here.
+	{% endcomment %}
+
+	{% render "head", title: page.url %}
+
+	<body>
+		<main>
+			{{ content }}
+		</main>
+	</body>
+
+</html>

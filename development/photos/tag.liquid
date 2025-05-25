@@ -1,7 +1,4 @@
 ---
-description: Virtual reality photography
-layout: layout.html
-title: m0b1.dev/photos/
 pagination:
   alias: tag
   data: photos.tags
@@ -9,50 +6,70 @@ pagination:
 permalink: "photos/{{ tag.title | slugify }}/"
 ---
 
-<h1>
-	<a href="/photos/tags" title="Return">&lArr;</a>
-	{{ tag.title }}
-</h1>
+{% comment %}
+The album and tag paginated generations do not use the main layout template file.
+They have their own layout to facilitate OpenGraph meta tags.
+That is why <head> is split into its own include here.
+{% endcomment %}
 
-{%- assign tagSlug = tag.title | slugify -%}
-{%- assign displayedImages = 0 -%}
+<!DOCTYPE html>
+<html lang="en">
 
-{%- for album in photos.albums -%}
+	{%- assign folder = tag.album | slugify %}
+	{%- assign thumbnail = "https://cdn.m0b1.dev/vrc/" | concat: folder | concat: '/' | concat: tag.thumbnail -%}
+	{% render "head", title: page.url, thumbnail: thumbnail %}
 
-	{%- assign applicablePhotos = '' | split: '' -%}
-	{%- for photo in album.photos -%}
-		{%- assign tags = photo[1] | split: ', ' -%}
-		{%- if tags contains tagSlug -%}
-			{%- assign applicablePhotos = applicablePhotos | push: photo -%}
-		{%- endif -%}
-	{%- endfor -%}
+	<body>
+		<main>
 
-	{% if applicablePhotos.size > 0 %}
+			<h1>
+				<a href="/photos/tags" title="Return">&lArr;</a>
+				{{ tag.title }}
+			</h1>
 
-		<hr>
+			{%- assign tagSlug = tag.title | slugify -%}
+			{%- assign displayedImages = 0 -%}
 
-		<div id="{{ album.title | slugify }}">
+			{%- for album in photos.albums -%}
 
-			<h2>
-				{{ album.title }}
-			</h2>
+				{%- assign applicablePhotos = '' | split: '' -%}
+				{%- for photo in album.photos -%}
+					{%- assign tags = photo[1] | split: ', ' -%}
+					{%- if tags contains tagSlug -%}
+						{%- assign applicablePhotos = applicablePhotos | push: photo -%}
+					{%- endif -%}
+				{%- endfor -%}
 
-			{% for photo in applicablePhotos %}
+				{% if applicablePhotos.size > 0 %}
 
-				{%- assign altText = album.title | concat: ': ' | concat: photo[0] -%}
+					<hr>
 
-				{% render "image",
-					index: displayedImages,
-					folder: album.title,
-					file: photo[0],
-					altText: altText
-				%}
+					<div id="{{ album.title | slugify }}">
 
-				{%- assign displayedImages = displayedImages | plus: 1 -%}
+						<h2>
+							{{ album.title }}
+						</h2>
 
-			{% endfor %}
-		</div>
+						{% for photo in applicablePhotos %}
 
-	{% endif %}
+							{%- assign altText = album.title | concat: ': ' | concat: photo[0] -%}
 
-{%- endfor -%}
+							{% render "image",
+								index: displayedImages,
+								folder: album.title,
+								file: photo[0],
+								altText: altText
+							%}
+
+							{%- assign displayedImages = displayedImages | plus: 1 -%}
+
+						{% endfor %}
+					</div>
+
+				{% endif %}
+
+			{%- endfor -%}
+		</main>
+	</body>
+</html>
+

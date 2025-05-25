@@ -1,0 +1,25 @@
+{%- assign title = "mob1.dev" | concat: title -%}
+{%- assign description = "A page from m0b1's portfolio" -%}
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="description" content="{{ description }}">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>
+		{{ title }}
+	</title>
+
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon.png">
+
+	<link rel="stylesheet" href="/portfolio.css?cacheBust=v4">
+
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://m0b1.dev">
+	<meta property="og:site_name" content="m0b1.dev">
+	<meta property="og:title" content="{{ title }}">
+	<meta property="og:description" content="{{ description }}"/>
+	<meta property="og:image" content="{{ thumbnail | default: "/favicon.png" }}?class=thumbnail">
+
+</head>
