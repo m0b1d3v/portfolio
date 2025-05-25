@@ -40,7 +40,7 @@ That is why <head> is split into its own include here.
 					{%- endif -%}
 				{%- endfor -%}
 
-				{% if applicablePhotos.size > 0 %}
+				{%- if applicablePhotos.size > 0 -%}
 
 					<hr>
 
@@ -50,23 +50,23 @@ That is why <head> is split into its own include here.
 							{{ album.title }}
 						</h2>
 
-						{% for photo in applicablePhotos %}
+						{%- for photo in applicablePhotos -%}
 
 							{%- assign altText = album.title | concat: ': ' | concat: photo[0] -%}
 
-							{% render "image",
+							{%- render "image",
 								index: displayedImages,
 								folder: album.title,
 								file: photo[0],
 								altText: altText
-							%}
+							-%}
 
 							{%- assign displayedImages = displayedImages | plus: 1 -%}
 
-						{% endfor %}
+						{%- endfor -%}
 					</div>
 
-				{% endif %}
+				{%- endif -%}
 
 			{%- endfor -%}
 		</main>

@@ -20,11 +20,12 @@ permalink: "photos/"
 
 <hr>
 
-{% for album in photos.albums %}
+{%- for album in photos.albums -%}
 	{% render "image",
 		index: forloop.index,
 		folder: album.title,
 		file: album.thumbnail,
 		path: album.title
 	%}
-{% endfor %}
+
+{%- endfor -%}

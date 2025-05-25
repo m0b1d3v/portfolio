@@ -19,11 +19,11 @@ layout: layout
 
 <hr>
 
-{% for tag in photos.tags %}
-	{% render "image",
+{%- for tag in photos.tags -%}
+	{%- render "image",
 		index: forloop.index,
 		folder: tag.album,
 		file: tag.thumbnail,
 		path: tag.title
-	%}
-{% endfor %}
+	-%}
+{%- endfor -%}

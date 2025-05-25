@@ -33,18 +33,18 @@ That is why <head> is split into its own include here.
 				{{ album.title }}
 			</h2>
 
-			{% for photo in album.photos %}
+			{%- for photo in album.photos -%}
 
 				{%- assign altText = album.title | concat: ': ' | concat: photo[0] -%}
 
-				{% render "image",
+				{%- render "image",
 					index: forloop.index,
 					folder: album.title,
 					file: photo[0],
 					altText: altText
-				%}
+				-%}
 
-			{% endfor %}
+			{%- endfor -%}
 
 		</main>
 	</body>

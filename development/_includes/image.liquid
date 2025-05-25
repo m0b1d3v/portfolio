@@ -6,7 +6,7 @@
 {%- assign folderSlug = folder | slugify -%}
 {%- assign image = "https://cdn.m0b1.dev/vrc/" | concat: folderSlug | concat: '/' | concat: file -%}
 
-{%- if path -%}
+{%- if path %}
 
 	<a href="/photos/{{ path | slugify }}">
 		<figure>
@@ -22,7 +22,7 @@
 		</figure>
 	</a>
 
-{% else %}
+{%- else %}
 
 	<a href="{{ image }}?class=source">
 		<figure class="no-caption">
@@ -35,4 +35,4 @@
 		</figure>
 	</a>
 
-{% endif %}
+{%- endif %}
