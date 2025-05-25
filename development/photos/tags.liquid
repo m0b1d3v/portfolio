@@ -19,11 +19,28 @@ layout: layout
 
 <hr>
 
-{%- for tag in photos.tags -%}
+{%- assign hightlightedTags = '' | split: '' -%}
+
+{%- for album in photos.albums -%}
+	{%- for photo in album.photos -%}
+		{%- assign tags = photo[1] | split: ', ' | reject_exp: "item", "item == '^' or item[0] != '^'" -%}
+		{%- for tag in tags -%}
+			{%- assign updatedTag = tag | remove: '^' -%}
+			{%- if photos.tags contains updatedTag -%}
+				{%- assign highlightedTag = '' | split: '' | push: updatedTag | push: album.title | push: photo[0] -%}
+				{%- assign highlightedTags = highlightedTags | push: highlightedTag -%}
+			{%- endif -%}
+		{%- endfor -%}
+	{%- endfor -%}
+{%- endfor -%}
+
+{% assign highlightedTags = highlightedTags | sort %}
+
+{%- for tag in highlightedTags -%}
 	{%- render "image",
 		index: forloop.index,
-		folder: tag.album,
-		file: tag.thumbnail,
-		path: tag.title
+		folder: tag[1],
+		file: tag[2],
+		path: tag[0]
 	-%}
 {%- endfor -%}

@@ -3,7 +3,7 @@ pagination:
   alias: tag
   data: photos.tags
   size: 1
-permalink: "photos/{{ tag.title | slugify }}/"
+permalink: "photos/{{ tag | slugify }}/"
 ---
 
 {% comment %}
@@ -15,27 +15,35 @@ That is why <head> is split into its own include here.
 <!DOCTYPE html>
 <html lang="en">
 
-	{%- assign folder = tag.album | slugify %}
-	{%- assign thumbnail = "https://cdn.m0b1.dev/vrc/" | concat: folder | concat: '/' | concat: tag.thumbnail -%}
-	{% render "head", title: page.url, ogTitle: tag.title, thumbnail: thumbnail %}
+	{%- for album in photos.albums -%}
+		{%- for photo in album.photos -%}
+			{%- assign tags = photo[1] | split: ', ' | reject_exp: "item", "item == '^' or item[0] != '^'" | join | remove: '^' -%}
+			{%- if tags contains tag -%}
+
+				{%- assign folder = album.title | slugify %}
+				{%- assign thumbnail = "https://cdn.m0b1.dev/vrc/" | concat: folder | concat: '/' | concat: photo[0] -%}
+				{% render "head", title: page.url, ogTitle: tag, thumbnail: thumbnail %}
+
+			{%- endif -%}
+		{%- endfor -%}
+	{%- endfor -%}
 
 	<body>
 		<main>
 
 			<h1>
 				<a href="/photos/tags" title="Return">&lArr;</a>
-				{{ tag.title }}
+				{{ tag }}
 			</h1>
 
-			{%- assign tagSlug = tag.title | slugify -%}
 			{%- assign displayedImages = 0 -%}
 
 			{%- for album in photos.albums -%}
 
 				{%- assign applicablePhotos = '' | split: '' -%}
 				{%- for photo in album.photos -%}
-					{%- assign tags = photo[1] | split: ', ' -%}
-					{%- if tags contains tagSlug -%}
+					{%- assign tags = photo[1] | remove: '^' | split: ', ' -%}
+					{%- if tags contains tag -%}
 						{%- assign applicablePhotos = applicablePhotos | push: photo -%}
 					{%- endif -%}
 				{%- endfor -%}
