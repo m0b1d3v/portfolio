@@ -17,7 +17,7 @@ That is why <head> is split into its own include here.
 
 	{%- assign folder = tag.album | slugify %}
 	{%- assign thumbnail = "https://cdn.m0b1.dev/vrc/" | concat: folder | concat: '/' | concat: tag.thumbnail -%}
-	{% render "head", title: page.url, thumbnail: thumbnail %}
+	{% render "head", title: page.url, ogTitle: tag.title, thumbnail: thumbnail %}
 
 	<body>
 		<main>

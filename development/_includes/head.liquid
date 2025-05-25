@@ -18,7 +18,7 @@
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://m0b1.dev">
 	<meta property="og:site_name" content="m0b1.dev">
-	<meta property="og:title" content="{{ title }}">
+	<meta property="og:title" content="{{ ogTitle | default: title }}">
 	<meta property="og:description" content="{{ description }}"/>
 	<meta property="og:image" content="{{ thumbnail | default: "/favicon.png" }}?class=thumbnail">
 
