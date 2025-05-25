@@ -30,14 +30,10 @@ That is why <head> is split into its own include here.
 
 			<h1>
 				<a href="/photos" title="Return">&lArr;</a>
-				Album
+				{{ album.title }}
 			</h1>
 
 			<hr>
-
-			<h2>
-				{{ album.title }}
-			</h2>
 
 			{%- for photo in album.photos -%}
 
