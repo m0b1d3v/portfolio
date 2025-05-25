@@ -34,7 +34,7 @@ layout: layout
 	{%- endfor -%}
 {%- endfor -%}
 
-{% assign highlightedTags = highlightedTags | sort %}
+{% assign highlightedTags = highlightedTags | sort_natural %}
 
 {%- for tag in highlightedTags -%}
 	{%- render "image",
