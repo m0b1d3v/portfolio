@@ -19,14 +19,13 @@ That is why <head> is split into its own include here.
 		{%- for photo in album.photos -%}
 			{%- assign tags = photo[1] | split: ', ' | reject_exp: "item", "item == '^' or item[0] != '^'" | join | remove: '^' -%}
 			{%- if tags contains tag -%}
-
 				{%- assign folder = album.title | slugify %}
 				{%- assign thumbnail = "https://cdn.m0b1.dev/vrc/" | concat: folder | concat: '/' | concat: photo[0] -%}
-				{% render "head", title: page.url, ogTitle: tag, thumbnail: thumbnail %}
-
 			{%- endif -%}
 		{%- endfor -%}
 	{%- endfor -%}
+
+	{% render "head", title: page.url, ogTitle: tag, thumbnail: thumbnail %}
 
 	<body>
 		<main>
