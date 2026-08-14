@@ -4,7 +4,7 @@
 {%- endif -%}
 
 {%- assign folderSlug = folder | slugify -%}
-{%- assign image = "https://cdn.m0b1.dev/vrc/" | concat: folderSlug | concat: '/' | concat: file -%}
+{%- assign image = "https://cdn.m0b1.dev/" | concat: root | concat: '/' | concat: folderSlug | concat: '/' | concat: file -%}
 
 {%- if path %}
 

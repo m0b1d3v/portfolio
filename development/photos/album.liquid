@@ -21,8 +21,9 @@ That is why <head> is split into its own include here.
 		{%- endif -%}
 	{%- endfor -%}
 
+	{%- assign root = album.root | default: 'vrc' -%}
 	{%- assign folder = album.title | slugify %}
-	{%- assign thumbnail = "https://cdn.m0b1.dev/vrc/" | concat: folder | concat: '/' | concat: thumbnail -%}
+	{%- assign thumbnail = "https://cdn.m0b1.dev/" | concat: root | concat: '/' | concat: folder | concat: '/' | concat: thumbnail -%}
 	{% render "head", title: page.url, ogTitle: album.title, thumbnail: thumbnail %}
 
 	<body>
@@ -43,6 +44,7 @@ That is why <head> is split into its own include here.
 					index: forloop.index,
 					folder: album.title,
 					file: photo[0],
+					root: root,
 					altText: altText
 				-%}
 

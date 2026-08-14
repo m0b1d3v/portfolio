@@ -58,6 +58,8 @@ That is why <head> is split into its own include here.
 							{{ album.title }}
 						</h2>
 
+						{%- assign root = album.root | default: 'vrc' -%}
+
 						{%- for photo in applicablePhotos -%}
 
 							{%- assign altText = album.title | concat: ': ' | concat: photo[0] -%}
@@ -66,6 +68,7 @@ That is why <head> is split into its own include here.
 								index: displayedImages,
 								folder: album.title,
 								file: photo[0],
+								root: root,
 								altText: altText
 							-%}
 

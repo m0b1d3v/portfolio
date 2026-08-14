@@ -22,6 +22,8 @@ permalink: "photos/"
 
 {%- for album in photos.albums -%}
 
+	{%- assign root = album.root | default: 'vrc' -%}
+
 	{% for photo in album.photos %}
 		{% if forloop.first == true or photo[1][0] == '^' %}
 			{% assign thumbnail = photo[0] %}
@@ -32,7 +34,8 @@ permalink: "photos/"
 		index: forloop.index,
 		folder: album.title,
 		file: thumbnail,
-		path: album.title
+		path: album.title,
+		root: root
 	%}
 
 {%- endfor -%}
