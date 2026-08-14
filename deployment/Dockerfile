@@ -1,6 +1,6 @@
 # Stage 0
 # Copying necessary files and installing NPM packages
-FROM node:22.16.0-alpine AS base
+FROM node:24.19.0-alpine AS base
 
 WORKDIR /app
 COPY development/ ./
@@ -17,14 +17,14 @@ CMD npm start
 # Stage 2
 # Playwright testing
 # https://playwright.dev/docs/docker#pull-the-image
-FROM mcr.microsoft.com/playwright:v1.46.1-jammy AS testing
+FROM mcr.microsoft.com/playwright:v1.62.0-noble AS testing
 
 COPY --from=base /app ./
 CMD npm test
 
 # Stage 3
 # Production run
-FROM caddy:2.10.0-alpine AS production
+FROM caddy:2.11.4-alpine AS production
 
 VOLUME /data
 ENV XDG_CONFIG_HOME /data/config
