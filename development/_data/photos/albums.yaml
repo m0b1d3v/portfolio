@@ -1,3 +1,40 @@
+- title: 2026-08 - IRL
+  root: irl
+  photos:
+    IMG_0307.png: IRL
+    IMG_0329.png: ^, IRL
+
+- title: 2026-05 - IRL
+  root: irl
+  photos:
+    IMG_0159.png: IRL
+    IMG_0161.png: IRL
+    IMG_0173.png: IRL
+    IMG_0175.png: IRL
+    IMG_0180.png: IRL
+    IMG_0185.png: IRL
+    IMG_0193.png: IRL
+    IMG_0206.png: ^, IRL
+    IMG_0217.png: IRL
+    IMG_0226.png: IRL
+    IMG_0233.png: IRL
+    IMG_0235.png: IRL
+    IMG_0263.png: IRL
+
+- title: 2026-04 - IRL
+  root: irl
+  photos:
+    IMG_0008.png: IRL
+    IMG_0013.png: ^, IRL
+    IMG_0050.png: IRL
+    IMG_0057.png: IRL
+    IMG_0116.png: IRL
+    IMG_0117.png: IRL
+    IMG_0119.png: IRL
+    IMG_0124.png: IRL
+    IMG_0130.png: IRL
+    IMG_0156.png: IRL
+
 - title: 2025-10 - IRL
   root: irl
   photos:
