@@ -3,8 +3,13 @@
 	{%- assign loading = 'eager' -%}
 {%- endif -%}
 
+{%- assign folderRoot = 'irl' -%}
+{%- if file contains 'VRChat_' -%}
+	{%- assign folderRoot = 'vrc' -%}
+{%- endif -%}
+
 {%- assign folderSlug = folder | slugify -%}
-{%- assign image = "https://cdn.m0b1.dev/" | concat: root | concat: '/' | concat: folderSlug | concat: '/' | concat: file -%}
+{%- assign image = "https://cdn.m0b1.dev/" | concat: folderRoot | concat: '/' | concat: folderSlug | concat: '/' | concat: file -%}
 
 {%- if path %}
 
