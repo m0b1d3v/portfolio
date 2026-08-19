@@ -1,41 +1,54 @@
 ---
-layout: layout
 permalink: "photos/"
 ---
 
-<div>
+<!DOCTYPE html>
+<html lang="en">
 
-	<h1>
-		<a href="/" title="Return">&lArr;</a>
-		Photos by Album
-	</h1>
+	{% render "head", title: page.url %}
 
-	<p>
-		Thanks to everyone that make these possible.
-		<br>
-		<a href="/photos/tags">Photos by Tag &rArr;</a>
-	</p>
+	<body>
+		<main>
 
-</div>
+			<div>
 
-<hr>
+				<h1>
+					<a href="/" title="Return">&lArr;</a>
+					Photos by Album
+				</h1>
 
-{%- for album in photos.albums -%}
+				<p>
+					Thanks to everyone that make these possible.
+					<br>
+					<a href="/photos/tags">Photos by Tag &rArr;</a>
+				</p>
 
-	{%- assign root = album.root | default: 'vrc' -%}
+			</div>
 
-	{% for photo in album.photos %}
-		{% if forloop.first == true or photo[1][0] == '^' %}
-			{% assign thumbnail = photo[0] %}
-		{% endif %}
-	{% endfor %}
+			<hr>
 
-	{% render "image",
-		index: forloop.index,
-		folder: album.title,
-		file: thumbnail,
-		path: album.title,
-		root: root
-	%}
+			{%- for album in photos.albums -%}
 
-{%- endfor -%}
+				{%- assign root = album.root | default: 'vrc' -%}
+
+				{% for photo in album.photos %}
+					{% if forloop.first == true or photo[1][0] == '^' %}
+						{% assign thumbnail = photo[0] %}
+					{% endif %}
+				{% endfor %}
+
+				{% render "image",
+					index: forloop.index,
+					folder: album.title,
+					file: thumbnail,
+					path: album.title,
+					root: root
+				%}
+
+			{%- endfor -%}
+
+
+		</main>
+	</body>
+
+</html>

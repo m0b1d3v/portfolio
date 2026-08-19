@@ -6,12 +6,6 @@ pagination:
 permalink: "photos/{{ tag | slugify }}/"
 ---
 
-{% comment %}
-The album and tag paginated generations do not use the main layout template file.
-They have their own layout to facilitate OpenGraph meta tags.
-That is why <head> is split into its own include here.
-{% endcomment %}
-
 <!DOCTYPE html>
 <html lang="en">
 

@@ -1,50 +1,59 @@
----
-layout: layout
----
+<!DOCTYPE html>
+<html lang="en">
 
-<div>
+	{% render "head", title: page.url %}
 
-	<h1>
-		<a href="/photos" title="Return">&lArr;</a>
-		Photos by Tag
-	</h1>
+	<body>
+		<main>
 
-	<p>
-		Thanks to everyone that make these possible.
-		<br>
-		<a href="/photos">Photos by Album &rArr;</a>
-	</p>
+			<div>
 
-</div>
+				<h1>
+					<a href="/photos" title="Return">&lArr;</a>
+					Photos by Tag
+				</h1>
 
-<hr>
+				<p>
+					Thanks to everyone that make these possible.
+					<br>
+					<a href="/photos">Photos by Album &rArr;</a>
+				</p>
 
-{%- assign hightlightedTags = '' | split: '' -%}
+			</div>
 
-{%- for album in photos.albums -%}
+			<hr>
 
-	{%- assign root = album.root | default: 'vrc' -%}
+			{%- assign hightlightedTags = '' | split: '' -%}
 
-	{%- for photo in album.photos -%}
-		{%- assign tags = photo[1] | split: ', ' | reject_exp: "item", "item == '^' or item[0] != '^'" -%}
-		{%- for tag in tags -%}
-			{%- assign updatedTag = tag | remove: '^' -%}
-			{%- if photos.tags contains updatedTag -%}
-				{%- assign highlightedTag = '' | split: '' | push: updatedTag | push: root | push: album.title | push: photo[0] -%}
-				{%- assign highlightedTags = highlightedTags | push: highlightedTag -%}
-			{%- endif -%}
-		{%- endfor -%}
-	{%- endfor -%}
-{%- endfor -%}
+			{%- for album in photos.albums -%}
 
-{% assign highlightedTags = highlightedTags | sort_natural %}
+				{%- assign root = album.root | default: 'vrc' -%}
 
-{%- for tag in highlightedTags -%}
-	{%- render "image",
-		index: forloop.index,
-		folder: tag[2],
-		file: tag[3],
-		path: tag[0],
-		root: tag[1]
-	-%}
-{%- endfor -%}
+				{%- for photo in album.photos -%}
+					{%- assign tags = photo[1] | split: ', ' | reject_exp: "item", "item == '^' or item[0] != '^'" -%}
+					{%- for tag in tags -%}
+						{%- assign updatedTag = tag | remove: '^' -%}
+						{%- if photos.tags contains updatedTag -%}
+							{%- assign highlightedTag = '' | split: '' | push: updatedTag | push: root | push: album.title | push: photo[0] -%}
+							{%- assign highlightedTags = highlightedTags | push: highlightedTag -%}
+						{%- endif -%}
+					{%- endfor -%}
+				{%- endfor -%}
+			{%- endfor -%}
+
+			{% assign highlightedTags = highlightedTags | sort_natural %}
+
+			{%- for tag in highlightedTags -%}
+				{%- render "image",
+					index: forloop.index,
+					folder: tag[2],
+					file: tag[3],
+					path: tag[0],
+					root: tag[1]
+				-%}
+			{%- endfor -%}
+
+		</main>
+	</body>
+
+</html>
